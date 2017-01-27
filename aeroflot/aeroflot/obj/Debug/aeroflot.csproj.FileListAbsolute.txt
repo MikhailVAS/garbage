@@ -1,9 +1,0 @@
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\bin\Debug\aeroflot.exe.config
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\bin\Debug\aeroflot.exe
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\bin\Debug\aeroflot.pdb
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.Properties.Resources.resources
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.csproj.GenerateResource.Cache
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.exe
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.pdb
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.MainForm.resources
-D:\BNTU\Mi\Курсач по С#\Programm\aeroflot\aeroflot\obj\Debug\aeroflot.csprojResolveAssemblyReference.cache
