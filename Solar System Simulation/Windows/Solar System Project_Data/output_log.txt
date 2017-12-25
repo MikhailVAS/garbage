@@ -1,0 +1,137 @@
+Mono path[0] = 'D:/Michigan/Solar/Solar System Simulation/Windows/Solar System Project_Data/Managed'
+Mono path[1] = 'D:/Michigan/Solar/Solar System Simulation/Windows/Solar System Project_Data/Mono'
+Mono config path = 'D:/Michigan/Solar/Solar System Simulation/Windows/Solar System Project_Data/Mono/etc'
+PlayerConnection initialized from D:/Michigan/Solar/Solar System Simulation/Windows/Solar System Project_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55274
+Multi-casting "[IP] 192.168.56.1 [Port] 55274 [Flags] 2 [Guid] 4264291417 [EditorId] 3411741137 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-5DQKTS5) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55274]
+PlayerConnection already initialized - listening to [0.0.0.0:55274]
+Player data archive not found at `D:/Michigan/Solar/Solar System Simulation/Windows/Solar System Project_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.4p4 (72f24c04957f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940MX (ID=0x134d)
+    Vendor:   NVIDIA
+    VRAM:     2020 MB
+    Driver:   22.21.13.8528
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.019 seconds
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Michigan\Solar\Solar System Simulation\Windows\Solar System Project_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.658671 ms
+LookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+LookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\LookAtTarget.cs:12)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/LookAtTarget.cs Line: 12)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+ChangeLookAtTarget target not specified. Defaulting to parent GameObject
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+ChangeLookAtTarget:Start() (at D:\Michigan\Solar\Solar System Simulation\Assets\Scripts\ChangeLookAtTarget.cs:11)
+ 
+(Filename: D:/Michigan/Solar/Solar System Simulation/Assets/Scripts/ChangeLookAtTarget.cs Line: 11)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 4a84 -> priority: 1 
+  Thread -> id: 4adc -> priority: 1 
