@@ -1,0 +1,36 @@
+D:\111\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe.config
+D:\111\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe
+D:\111\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.pdb
+D:\111\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Form1.resources
+D:\111\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Properties.Resources.resources
+D:\111\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.csproj.GenerateResource.Cache
+D:\111\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.exe
+D:\111\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.pdb
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe.config
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.pdb
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Form1.resources
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Properties.Resources.resources
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.csproj.GenerateResource.Cache
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.exe
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.pdb
+D:\BNTU\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.csprojResolveAssemblyReference.cache
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe.config
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.exe
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\bin\Debug\SolarizeImage.pdb
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Form1.resources
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.Properties.Resources.resources
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.csproj.GenerateResource.Cache
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.csproj.CoreCompileInputs.cache
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.exe
+D:\BNTU\3 Курс\#3.Весна\Контрольные\Solarize\SolarizeImage\SolarizeImage\obj\Debug\SolarizeImage.pdb
+d:\laba_Gamma\SolarizeImage\bin\Debug\SolarizeImage.exe.config
+d:\laba_Gamma\SolarizeImage\bin\Debug\SolarizeImage.exe
+d:\laba_Gamma\SolarizeImage\bin\Debug\SolarizeImage.pdb
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.Form1.resources
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.Properties.Resources.resources
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.csproj.GenerateResource.Cache
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.csproj.CoreCompileInputs.cache
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.exe
+d:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.pdb
+D:\laba_Gamma\SolarizeImage\obj\Debug\SolarizeImage.csprojResolveAssemblyReference.cache
