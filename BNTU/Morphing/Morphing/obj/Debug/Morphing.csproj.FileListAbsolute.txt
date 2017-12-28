@@ -1,0 +1,20 @@
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\bin\Debug\Morphing.exe.config
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\bin\Debug\Morphing.exe
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\bin\Debug\Morphing.pdb
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.Form1.resources
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.Properties.Resources.resources
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.csproj.GenerateResource.Cache
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.csproj.CoreCompileInputs.cache
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.exe
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.pdb
+D:\BNTU\4 Курс\Winter\Кр\Кр МиАКГ\Morphing\Morphing\Morphing\obj\Debug\Morphing.csprojResolveAssemblyReference.cache
+d:\Git\garbage\BNTU\Morphing\Morphing\bin\Debug\Morphing.exe.config
+d:\Git\garbage\BNTU\Morphing\Morphing\bin\Debug\Morphing.exe
+d:\Git\garbage\BNTU\Morphing\Morphing\bin\Debug\Morphing.pdb
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.csprojResolveAssemblyReference.cache
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.Form1.resources
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.Properties.Resources.resources
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.csproj.GenerateResource.Cache
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.csproj.CoreCompileInputs.cache
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.exe
+d:\Git\garbage\BNTU\Morphing\Morphing\obj\Debug\Morphing.pdb
