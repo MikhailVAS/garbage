@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Morphing
 {
@@ -19,59 +20,69 @@ namespace Morphing
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Image img = Image.FromFile(@"d:\Git\garbage\BNTU\Morphing\Morphing\IronMan.jpg");
-            Bitmap bit_map = new Bitmap(img);
-            pic_original1.Image = img;
-            pic_processed.Image = effect(bit_map, 0.3);
+            for (double step=0; step<=1.01; step += 0.05)
+            {
+                effect((Bitmap)pic_original1.Image.Clone(), (Bitmap)pic_original2.Image.Clone(), step);
+            }
         }
 
-        private Byte transformation(Byte color, double p)
+        private Byte transformation(Byte color1, Byte color2, double step)
         {
             Byte result;
-
-            //Gamma correction
-            result = (byte)(Math.Pow(((double)color / 255), p) * 255);
+            result = (byte)(step * color2 + (1 - step) * color1);
             return result;
         }
 
 
-        private Bitmap effect(Bitmap Image, double p)
+        private void effect(Bitmap Image1, Bitmap Image2, double step)
         {
-            int Height = Image.Height;
-            int Width = Image.Width;
+            int Height = Image1.Height;
+            int Width = Image1.Width;
 
-            Bitmap result = Image;
+            Bitmap result = (Bitmap)pic_processed.Image.Clone();
 
             for (int i = 0; i < Height; i++)
             {
                 for (int j = 0; j < Width; j++)
                 {
-                    Color Pixel = Image.GetPixel(j, i);
-                    Byte r = Pixel.R;
-                    Byte g = Pixel.G;
-                    Byte b = Pixel.B;
+                    Color Pixel1 = Image1.GetPixel(j, i);
+                    Byte r1 = Pixel1.R;
+                    Byte g1 = Pixel1.G;
+                    Byte b1 = Pixel1.B;
+
+                    Color Pixel2 = Image2.GetPixel(j, i);
+                    Byte r2 = Pixel2.R;
+                    Byte g2 = Pixel2.G;
+                    Byte b2 = Pixel2.B;
 
                     Byte new_r, new_g, new_b;
-                    new_r = transformation(r, p);
-                    new_g = transformation(g, p);
-                    new_b = transformation(b, p);
+                    new_r = transformation(r1, r2, step);
+                    new_g = transformation(g1, g2, step);
+                    new_b = transformation(b1, b2, step);
                     Color new_pixel = Color.FromArgb(255, new_r, new_g, new_b);
                     result.SetPixel(j, i, new_pixel);
                 }
 
             }
-            return result;
+            pic_processed.Image = (Bitmap)result.Clone();
+            pic_processed.Refresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Image img1 = Image.FromFile(@"d:\Git\garbage\BNTU\Morphing\Morphing\IronMan.jpg");
             Bitmap bit_map1 = new Bitmap(img1);
-            pic_original1.Image = img1;
+            pic_original1.Image = (Bitmap)bit_map1.Clone();
+            pic_processed.Image = (Bitmap)bit_map1.Clone();
             Image img2 = Image.FromFile(@"d:\Git\garbage\BNTU\Morphing\Morphing\Joke.jpg");
             Bitmap bit_map2 = new Bitmap(img2);
-            pic_original2.Image = img2;
-            pic_processed.Image = bit_map1;
+            bit_map2 = new Bitmap(bit_map2, bit_map1.Size);
+            pic_original2.Image = bit_map2;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
