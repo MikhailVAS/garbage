@@ -1,0 +1,14 @@
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\OEBSHelper.exe.config
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\OEBSHelper.exe
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\OEBSHelper.pdb
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.Properties.Resources.resources
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.csproj.GenerateResource.Cache
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompileInputs.cache
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.exe
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.pdb
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.Form1.resources
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.Form2.resources
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.Form3.resources
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\BunifuDataViz 1.0.1.dll
+C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\Bunifu_UI_v1.5.4.dll
