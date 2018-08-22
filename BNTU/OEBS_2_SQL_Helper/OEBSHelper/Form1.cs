@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using OEBSHelper.SqlConn;
+using System.Data.Common;
+
 
 namespace OEBSHelper
 {
@@ -22,6 +18,8 @@ namespace OEBSHelper
             public static string sid { get; set; }
             public static string user { get; set; }
             public static string password { get; set; }
+            public static string email { get; set; }
+            public static string email_password { get; set; }
         }
 
         public Form1()
@@ -39,8 +37,9 @@ namespace OEBSHelper
             GlobalParam.sid  = bunifuMetroTextbox3.Text;
             GlobalParam.user  = bunifuMetroTextbox4.Text;
             GlobalParam.password  = bunifuMetroTextbox5.Text;
-
-           // OracleConnection conn = DBUtils.GetDBConnection();
+            GlobalParam.email = bunifuMetroTextbox7.Text;
+            GlobalParam.email_password = bunifuMetroTextbox6.Text;
+            // OracleConnection conn = DBUtils.GetDBConnection();
             OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
 
             bunifuCustomLabel7.Text = "Get Connection: " + conn;
@@ -56,10 +55,14 @@ namespace OEBSHelper
                 return;
             }
             bunifuCustomLabel7.Text = "Connection successful!";
-           // this.Hide();
+           this.Hide();
             Form2 f2 = new Form2();
-            f2.ShowDialog(); //блокируется основная форма
+            f2.Top = Screen.PrimaryScreen.WorkingArea.Height - f2.Height;
+            f2.Left = Screen.PrimaryScreen.WorkingArea.Width - f2.Width;
+            f2.Show(); //не блокируется
+          //  f2.ShowDialog(); //блокируется основная форма
             // или f2.Show(); //не блокируется
         }
+
     }
-}
+} 

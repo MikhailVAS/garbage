@@ -12,15 +12,16 @@ C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\ob
 C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\obj\Debug\OEBSHelper.Form3.resources
 C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\BunifuDataViz 1.0.1.dll
 C:\Users\Mihail.Vasiljev\Desktop\BNTU\Diplom\OEBSHelper\OEBSHelper\OEBSHelper\bin\Debug\Bunifu_UI_v1.5.4.dll
+C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe.config
+C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe
+C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.pdb
+C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\Tulpep.NotificationWindow.dll
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form1.resources
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form2.resources
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Properties.Resources.resources
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.GenerateResource.cache
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe.config
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.pdb
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csprojAssemblyReference.cache

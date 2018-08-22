@@ -1,61 +1,142 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Common;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using OEBSHelper.SqlConn;
 using Oracle.ManagedDataAccess.Client;
 using OEBSHelper;
-using System.IO;
-using Bunifu.DataViz;
+using Tulpep.NotificationWindow;
+using System.Net.Mail;
+//using MetroFramework.Forms;
+
 
 namespace OEBSHelper
 {
     public partial class Form2 : Form
     {
+
+        [Flags]
+        enum AnimateWindowFlags
+        {
+            AW_HOR_POSITIVE = 0x00000001,
+            AW_HOR_NEGATIVE = 0x00000002,
+            AW_VER_POSITIVE = 0x00000004,
+            AW_VER_NEGATIVE = 0x00000008,
+            AW_CENTER = 0x00000010,
+            AW_HIDE = 0x00010000,
+            AW_ACTIVATE = 0x00020000,
+            AW_SLIDE = 0x00040000,
+            AW_BLEND = 0x00080000
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);
+
         public Form2()
         {
             InitializeComponent();
-        }
-        string path = Directory.GetCurrentDirectory();
+            // notifyIcon1 = new NotifyIcon();
+            //notifyIcon1.Icon = SystemIcons.Application;
+            //notifyIcon1.Visible = true;
+            //notifyIcon1.Click += notifyIcon1_Click;
+            //notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            notifyIcon1.Icon = this.Icon;
+            notifyIcon1.Visible = true;
 
+        }
+        // string path = Directory.GetCurrentDirectory();
         private void Form2_Load(object sender, EventArgs e)
         {
-            bunifuCustomLabel4.Text = "";
-            //FileFoundList.Clear();
-            //GetFFiles(path+"\\sql", "*");
+            textBox1.Text = "";
+            textBox2.Text = "";
+            var wArea = Screen.PrimaryScreen.WorkingArea;
+            this.Left = wArea.Width + wArea.Left - this.Width;
+            this.Top = wArea.Height + wArea.Top - this.Height;
+
+            AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
         private void bunifuiOSSwitch1_Click(object sender, EventArgs e)
         {
             if (bunifuiOSSwitch1.Value)
             {
+                timer2.Interval = 10000; // specify interval time as you want
+                timer2.Tick += new EventHandler(timer2_Tick);
                 bunifuCircleProgressbar1.Value = 50;
                 bunifuCircleProgressbar1.animated = true;
                 bunifuCircleProgressbar1.animationIterval = 5;
                 bunifuCircleProgressbar1.animationSpeed = 5;
-                ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE CREATED_BY = '-1'AND CREATION_DATE >= TO_DATE('17.02.2018', 'dd.mm.yyyy')", false);
-
+                ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
+                timer2.Start();
 
                 // MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
+                timer2.Stop();
                 bunifuCircleProgressbar1.Value = 0;
                 bunifuCircleProgressbar1.animated = false;
-                bunifuCustomLabel4.Text = "";
+                textBox1.Text = "";
 
                 //  MessageBox.Show("No", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
         }
 
+        private void bunifuiOSSwitch2_Click(object sender, EventArgs e)
+        {
+            if (bunifuiOSSwitch2.Value)
+            {
+                timer1.Interval = 10000; // specify interval time as you want
+                timer1.Tick += new EventHandler(timer1_Tick);
+                bunifuCircleProgressbar3.Value = 50;
+                bunifuCircleProgressbar3.animated = true;
+                bunifuCircleProgressbar3.animationIterval = 5;
+                bunifuCircleProgressbar3.animationSpeed = 5;
+                ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
+                timer1.Start();
+
+                // MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                timer1.Stop();
+                bunifuCircleProgressbar3.Value = 0;
+                bunifuCircleProgressbar3.animated = false;
+                textBox2.Text = "";
+                notifyIcon1.Icon = this.Icon;
+                notifyIcon1.Visible = true;
+
+                //  MessageBox.Show("No", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void MailSend()
+        {
+            MailMessage message = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.life.com.by");
+            message.From = new MailAddress(Form1.GlobalParam.email);
+            message.To.Add("Mihail.Vasiljev@life.com.by");
+            message.Subject = "Cost Manager Error";
+            message.Body = "Cost Manager - Трагически пал в бою за справедливость";
+            //MailAddress copy = new MailAddress("Dmitry.Guk@life.com.by");
+            //message.CC.Add(copy);
+            SmtpServer.Port = 2525;
+            SmtpServer.Credentials = new System.Net.NetworkCredential(Form1.GlobalParam.email, Form1.GlobalParam.email_password);
+            SmtpServer.EnableSsl = true;
+
+            try
+            {
+                // MessageBox.Show("1", "YES", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                SmtpServer.Send(message);
+                //  MessageBox.Show("2", "YES", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (SmtpException g)
+            {
+                MessageBox.Show(g.ToString(), "Erroror", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
         private void ExecuteSQL(String SQL, Boolean Costing)
         {
             // Получить объект Connection для подключения к DB.
@@ -69,7 +150,7 @@ namespace OEBSHelper
             }
             catch (Exception ex)
             {
-               //// bunifuCustomLabel6.Text = "Error: " + ex;
+                //// bunifuCustomLabel6.Text = "Error: " + ex;
                 //bunifuCustomLabel6.Text = bunifuCustomLabel6.Text + ex.StackTrace;
             }
             finally
@@ -92,44 +173,42 @@ namespace OEBSHelper
 
             using (DbDataReader reader = cmd.ExecuteReader())
             {
-               if (reader.HasRows)
+                if (reader.HasRows)
                 {
-                    if (RealCosting)
-                    {
+                    //     if (RealCosting)
+                    //       {
 
-            //            // выводим названия столбцов
-            //            //bunifuCustomDataGrid1.Columns
-            //            //    bunifuCustomLabel6.Text = "{0}\t{1}\t{2}" + reader.GetName(0) + reader.GetName(1) + reader.GetName(2);
-                    }
-                   while (reader.Read())
+                    //         }
+                    while (reader.Read())
                     {
                         if (RealCosting)
-                       {
-            //                //bunifuCustomDataGrid1.ColumnCount = reader.FieldCount;
+                        {
 
-            //                for (int ColumnCount = 0; ColumnCount < reader.FieldCount; ColumnCount++)
-            //                {
-
-            //                    for (int RowCount = 0; RowCount <= reader.Depth; RowCount++)
-            //                    {
-            //                        // bunifuCustomDataGrid1.Rows.Add
-            //                        //  bunifuCustomDataGrid1.Rows.Add(reader.GetValue(RowCount));
-            //                        // string id = reader.GetString(RowCount);
-            //                        //   bunifuCustomLabel6.Text = reader.GetValue(1);
-            //                        bunifuCustomDataGrid1.Rows[RowCount].Cells[ColumnCount].Value = reader.GetValue(ColumnCount);
-            //                    }
-            //                }
-                             object id = reader.GetValue(0);
-                             object name = reader.GetValue(1);
-                             object age = reader.GetValue(2);
-
-                           //  bunifuCustomLabel6.Text = "{0} \t{1} \t{2}" + id + name + age;
+                            String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
+                            // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
+                            textBox2.Text = LAST_UPDATED_BY;
+                            if (Convert.ToInt32(LAST_UPDATED_BY) > 0)
+                            {
+                                notifyIcon1.Icon = SystemIcons.Error;
+                                notifyIcon1.Visible = true;
+                                PopupNotifier popup = new PopupNotifier();
+                                //popup.Image = Properties.Settings;
+                                popup.TitleText = "               ############# WARNING #############";
+                                popup.ContentText = "\n                     Error    Cost    Manager               ";
+                                popup.Popup();
+                                MailSend();
+                            }
+                            else
+                            {
+                                notifyIcon1.Icon = SystemIcons.Application;
+                                notifyIcon1.Visible = true;
+                            }
                         }
                         else
                         {
-                            String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));//reader.GetString(2);
-                                                                                          // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
-                            bunifuCustomLabel4.Text = LAST_UPDATED_BY;
+                            String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
+                            // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
+                            textBox1.Text = LAST_UPDATED_BY;
                         }
 
                     }
@@ -137,38 +216,6 @@ namespace OEBSHelper
             }
 
         }
-        //private void ReadData()
-        //{
-        //    FileStream fs = new FileStream(@"c:\\sql\\", FileMode.Open, FileAccess.Read);
-        //    StreamReader strm = new StreamReader(fs);
-        //    strm.BaseStream.Seek(0, SeekOrigin.Begin);
-        //    string str = strm.ReadLine();
-        //    while (str != null)
-        //    {
-        //        FileFoundList.Items.Add(str);
-        //        str = strm.ReadLine();
-        //    }
-        //    strm.Close();
-        //    fs.Close();
-        //}
-
-
-
-
-        private void bunifuImageButton11_Click(object sender, EventArgs e)
-        {
-            ExecuteSQL("SELECT 1 as FIRST_C,2 as SECOND_C,3 as Tree FROM  DUAL UNION ALL SELECT 4 as FIRST_C,5 as SECOND_C,6 as Tree FROM  DUAL ", true);
-        }
-        //private void bunifuMetroTextbox1_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    //  ReadData();
-        //    //if (bunifuMetroTextbox1.Text != "")
-        //    //{
-        //    //ProcessDirectory();// (directories[0], bunifuMetroTextbox1.Text);
-        //    //FileFoundList.Clear();
-        //    //GetFFiles(path + "\\sql", bunifuMetroTextbox1.Text);
-        //    //}
-        //}
 
 
         private void bunifuImageButton8_Click(object sender, EventArgs e)
@@ -176,104 +223,84 @@ namespace OEBSHelper
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
-        {
-
-        }
-        private bool _IsMaximized;
-        private Size _LastSize, _ScreenSize;
-        private Point _LastLocation, _ZeroZero;
-        //string[] directories = Directory.GetDirectories("C:\\sql");
-
 
         private void bunifuImageButton7_Click_1(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            //Close();
+            // проверяем наше окно, и если оно было свернуто, делаем событие        
+            //if (WindowState == FormWindowState.Minimized)
+            //{
+            //    // прячем наше окно из панели
+            //    this.ShowInTaskbar = false;
+            //    // делаем нашу иконку в трее активной
+            //    notifyIcon1.Visible = true;
+            //}
         }
 
-        private void bunifuImageButton10_Click_1(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Screen currentScreen = Screen.FromControl(this);
-            _ScreenSize = currentScreen.WorkingArea.Size;
+            // MessageBox.Show("bla-BLA0-LBA");
+            ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
+            // timer1.Stop();
+            //plotdata();
+        }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            /// MessageBox.Show("T1");
+            ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
+        }
 
-            if (this.Size == _ScreenSize)
-            {//is maximized
-                _IsMaximized = false;
-                this.Location = _LastLocation;
-                this.Size = _LastSize;
-                panel1.Height = this.Size.Height;
-                //panel2.Height = this.Size.Height-100;
-                //FileFoundList.Height = this.Size.Height-110;
-                // BtnMax.Image = Properties.Resources.Maximize;
-                //    BtnMax.Text = "Maximize";
-            }
-            else
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Closing programm ? ", "OEBS Helper",
+         MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                _IsMaximized = true;
-                _LastSize = this.Size;
-                _LastLocation = this.Location;
-                this.Location = currentScreen.WorkingArea.Location;
-                ;//_ZeroZero;
-                this.Size = _ScreenSize;
-                panel1.Height = this.Size.Height-10;
-                //panel2.Height = this.Size.Height;
-                //FileFoundList.Height = this.Size.Height-110;
-
-                //  BtnMax.Image = Properties.Resources.Restore;
-                //   BtnMax.Text = "Restore";
+                closing = false;
+                Application.Exit();
             }
         }
 
-
-        private void bunifuImageButton11_Click_2(object sender, EventArgs e)
+        private void qweToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExecuteSQL("SELECT 1 as FIRST_C,2 as SECOND_C,3 as Tree FROM  DUAL UNION ALL SELECT 4 as FIRST_C,5 as SECOND_C,6 as Tree FROM  DUAL ", true);
-
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show(); //не блокируется
         }
 
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    timer1.Stop();
-        //    plotdata();
-        //}
-
-        private void bunifuDataViz1_Load(object sender, EventArgs e)
+        private bool closing = true;
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+            e.Cancel = closing;
+            this.Hide();
         }
 
-  
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    Form3 f3 = new Form3();
-        //    f3.ShowDialog();
-            
-        //}
-
-        public class ListViewItem
+        private void notifyIcon1_Click_1(object sender, EventArgs e)
         {
-            public string Name { get; set; }
-            public string PathName { get; set; }
-        }
+            //throw new NotImplementedException();
+            MouseEventArgs me = (MouseEventArgs)e;
+            if (me.Button == MouseButtons.Left)
+            {
+                // MessageBox.Show("bla-BLA0-LBA");
+                this.Show();
 
-      //  public void GetFFiles(string DirectoryPath, string findstring)
-      //  {
-      //      DirectoryInfo Dinfo = new DirectoryInfo(DirectoryPath);
-      //      List<ListViewItem> ListViewItemFiles = new List<ListViewItem>();
-      //      List<FileInfo> ListOfFiles = Dinfo.GetFiles("*"+findstring+"*.sql", SearchOption.TopDirectoryOnly).ToList();
-      //      foreach (FileInfo directory in ListOfFiles)
-      //      {
-      //          //ListViewItemFiles.Add(new ListViewItem() { Name = directory.Name, PathName = directory.FullName });
-      //        //  FileFoundList.Items.Add( Convert.ToString(directory.Name));
-      //      }
-      //      //LocalFilesView.ItemsSource = ListViewItemFiles;
-        
-      //}
+                //Form form2 = Application.OpenForms["UpdateWindow"];
+                //if (form2 != null)
+                //{
+                //    form2.ShowDialog();
+                //    //form2.ShowDialog();
+                //}
+                //else
+                //{
+                //    form2.Show();
+                //}
+
+            }
+        }
     }
 }
-    
+
 
 
 
