@@ -18,8 +18,11 @@ namespace OEBSHelper
             public static string sid { get; set; }
             public static string user { get; set; }
             public static string password { get; set; }
-            public static string email { get; set; }
-            public static string email_password { get; set; }
+            public static string email_1 { get; set; }
+            public static string email_password_1 { get; set; }
+            public static string email_2 { get; set; }
+            public static string smtp { get; set; }
+            public static string smtp_port { get; set; }
         }
 
         public Form1()
@@ -37,8 +40,11 @@ namespace OEBSHelper
             GlobalParam.sid  = bunifuMetroTextbox3.Text;
             GlobalParam.user  = bunifuMetroTextbox4.Text;
             GlobalParam.password  = bunifuMetroTextbox5.Text;
-            GlobalParam.email = bunifuMetroTextbox7.Text;
-            GlobalParam.email_password = bunifuMetroTextbox6.Text;
+            GlobalParam.email_1 = bunifuMetroTextbox7.Text;
+            GlobalParam.email_password_1 = bunifuMetroTextbox6.Text;
+            GlobalParam.email_2 = bunifuMetroTextbox9.Text;
+            GlobalParam.smtp = bunifuMetroTextbox11.Text;
+            GlobalParam.smtp_port = bunifuMetroTextbox10.Text;
             // OracleConnection conn = DBUtils.GetDBConnection();
             OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
 

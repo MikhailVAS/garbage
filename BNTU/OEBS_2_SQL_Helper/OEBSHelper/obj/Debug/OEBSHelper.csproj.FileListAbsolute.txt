@@ -24,4 +24,3 @@ C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBS
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csprojAssemblyReference.cache
