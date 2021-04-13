@@ -24,3 +24,16 @@ C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBS
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe.config
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.pdb
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\Tulpep.NotificationWindow.dll
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csprojAssemblyReference.cache
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form1.resources
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form2.resources
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Properties.Resources.resources
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.GenerateResource.cache
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompileInputs.cache
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
