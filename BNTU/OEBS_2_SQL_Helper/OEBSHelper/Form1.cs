@@ -46,7 +46,9 @@ namespace OEBSHelper
             GlobalParam.smtp = bunifuMetroTextbox11.Text;
             GlobalParam.smtp_port = bunifuMetroTextbox10.Text;
             // OracleConnection conn = DBUtils.GetDBConnection();
-            OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
+          /* !!!!!!!!   Debug comment
+            
+           OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
 
             bunifuCustomLabel7.Text = "Get Connection: " + conn;
             try
@@ -60,6 +62,7 @@ namespace OEBSHelper
                 bunifuCustomLabel7.Text = "## ERROR: " + ex.Message;
                 return;
             }
+          */
             bunifuCustomLabel7.Text = "Connection successful!";
            this.Hide();
             Form2 f2 = new Form2();
