@@ -44,7 +44,7 @@ namespace OEBSHelper
         private void Form2_Load(object sender, EventArgs e)
         {
             textBox1.Text = "";
-            textBox2.Text = "";
+            textBox20.Text = "";
             var wArea = Screen.PrimaryScreen.WorkingArea;
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
@@ -77,14 +77,14 @@ namespace OEBSHelper
 
         private void bunifuiOSSwitch2_Click(object sender, EventArgs e)
         {
-            if (bunifuiOSSwitch2.Value)
+            if (bunifuiOSSwitch20.Value)
             {
                 timer1.Interval = 10000; // specify interval time as you want
                 timer1.Tick += new EventHandler(timer1_Tick);
-                bunifuCircleProgressbar3.Value = 50;
-                bunifuCircleProgressbar3.animated = true;
-                bunifuCircleProgressbar3.animationIterval = 5;
-                bunifuCircleProgressbar3.animationSpeed = 5;
+                bunifuCircleProgressbar30.Value = 50;
+                bunifuCircleProgressbar30.animated = true;
+                bunifuCircleProgressbar30.animationIterval = 5;
+                bunifuCircleProgressbar30.animationSpeed = 5;
                 ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
@@ -95,9 +95,9 @@ namespace OEBSHelper
             else
             {
                 timer1.Stop();
-                bunifuCircleProgressbar3.Value = 0;
-                bunifuCircleProgressbar3.animated = false;
-                textBox2.Text = "";
+                bunifuCircleProgressbar30.Value = 0;
+                bunifuCircleProgressbar30.animated = false;
+                textBox20.Text = "";
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
 
@@ -175,7 +175,7 @@ namespace OEBSHelper
 
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
                             // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
-                            textBox2.Text = LAST_UPDATED_BY;
+                            textBox20.Text = LAST_UPDATED_BY;
                             if (Convert.ToInt32(LAST_UPDATED_BY) > 0)
                             {
                                 notifyIcon1.Icon = SystemIcons.Error;
@@ -277,6 +277,20 @@ namespace OEBSHelper
         }
 
         private void bunifuDatepicker1_onValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuDropdown1_onItemSelected(object sender, EventArgs e)
+        {
+                    }
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
         {
 
         }
