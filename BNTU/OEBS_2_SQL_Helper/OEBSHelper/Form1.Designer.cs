@@ -52,6 +52,9 @@
             this.bunifuMetroTextbox7 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuMetroTextbox8 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuMetroTextbox10 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -63,9 +66,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMetroTextbox8 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -431,6 +431,52 @@
             this.panel2.Size = new System.Drawing.Size(371, 363);
             this.panel2.TabIndex = 24;
             // 
+            // bunifuMetroTextbox8
+            // 
+            this.bunifuMetroTextbox8.BorderColorFocused = System.Drawing.Color.SeaGreen;
+            this.bunifuMetroTextbox8.BorderColorIdle = System.Drawing.Color.Gray;
+            this.bunifuMetroTextbox8.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
+            this.bunifuMetroTextbox8.BorderThickness = 2;
+            this.bunifuMetroTextbox8.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.bunifuMetroTextbox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuMetroTextbox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.bunifuMetroTextbox8.ForeColor = System.Drawing.Color.Silver;
+            this.bunifuMetroTextbox8.isPassword = false;
+            this.bunifuMetroTextbox8.Location = new System.Drawing.Point(264, 331);
+            this.bunifuMetroTextbox8.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMetroTextbox8.MaxLength = 32767;
+            this.bunifuMetroTextbox8.Name = "bunifuMetroTextbox8";
+            this.bunifuMetroTextbox8.Size = new System.Drawing.Size(92, 22);
+            this.bunifuMetroTextbox8.TabIndex = 26;
+            this.bunifuMetroTextbox8.Text = "3";
+            this.bunifuMetroTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel10, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(21, 334);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(191, 16);
+            this.bunifuCustomLabel10.TabIndex = 25;
+            this.bunifuCustomLabel10.Text = "Required number of monitoring";
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.Checked = true;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuTransition1.SetDecoration(this.bunifuCheckbox1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(323, 30);
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox1.TabIndex = 24;
+            // 
             // bunifuCustomLabel13
             // 
             this.bunifuCustomLabel13.AutoSize = true;
@@ -564,52 +610,6 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = null;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuCheckbox1
-            // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuTransition1.SetDecoration(this.bunifuCheckbox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(323, 30);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 24;
-            // 
-            // bunifuCustomLabel10
-            // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel10, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(21, 334);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(191, 16);
-            this.bunifuCustomLabel10.TabIndex = 25;
-            this.bunifuCustomLabel10.Text = "Required number of monitoring";
-            // 
-            // bunifuMetroTextbox8
-            // 
-            this.bunifuMetroTextbox8.BorderColorFocused = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox8.BorderColorIdle = System.Drawing.Color.Gray;
-            this.bunifuMetroTextbox8.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox8.BorderThickness = 2;
-            this.bunifuMetroTextbox8.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox8, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMetroTextbox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMetroTextbox8.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuMetroTextbox8.isPassword = false;
-            this.bunifuMetroTextbox8.Location = new System.Drawing.Point(264, 331);
-            this.bunifuMetroTextbox8.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox8.MaxLength = 32767;
-            this.bunifuMetroTextbox8.Name = "bunifuMetroTextbox8";
-            this.bunifuMetroTextbox8.Size = new System.Drawing.Size(92, 22);
-            this.bunifuMetroTextbox8.TabIndex = 26;
-            this.bunifuMetroTextbox8.Text = "3";
-            this.bunifuMetroTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Form1
             // 

@@ -37,3 +37,4 @@ D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplet
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\ICSharpCode.TextEditor.dll
+D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csprojAssemblyReference.cache
