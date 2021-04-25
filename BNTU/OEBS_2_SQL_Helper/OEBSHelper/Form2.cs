@@ -49,7 +49,7 @@ namespace OEBSHelper
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
             bunifuMaterialTextbox1.Text = bunifuMaterialTextbox1.Text + " " + Form1.GlobalParam.monitor_count;
-            AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
+          //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
         private void bunifuiOSSwitch1_Click(object sender, EventArgs e)
