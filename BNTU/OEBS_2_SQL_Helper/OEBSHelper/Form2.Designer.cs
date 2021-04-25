@@ -54,10 +54,10 @@
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textEditorControl1 = new ICSharpCode.TextEditor.TextEditorControl();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSwitch1 = new Bunifu.Framework.UI.BunifuSwitch();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.textEditorControl1 = new ICSharpCode.TextEditor.TextEditorControl();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -89,7 +89,7 @@
             this.textBox20.Location = new System.Drawing.Point(1042, 232);
             this.textBox20.Name = "textBox20";
             this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(86, 33);
+            this.textBox20.Size = new System.Drawing.Size(0, 33);
             this.textBox20.TabIndex = 37;
             this.textBox20.Text = "777";
             this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -151,7 +151,7 @@
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1481, 44);
+            this.header.Size = new System.Drawing.Size(1300, 44);
             this.header.TabIndex = 2;
             // 
             // bunifuImageButton6
@@ -221,6 +221,7 @@
             // contextMenuStrip1
             // 
             this.bunifuTransition1.SetDecoration(this.contextMenuStrip1, BunifuAnimatorNS.DecorationType.None);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reconnectToolStripMenuItem,
             this.qweToolStripMenuItem,
@@ -442,16 +443,6 @@
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // textEditorControl1
-            // 
-            this.bunifuTransition1.SetDecoration(this.textEditorControl1, BunifuAnimatorNS.DecorationType.None);
-            this.textEditorControl1.IsReadOnly = false;
-            this.textEditorControl1.Location = new System.Drawing.Point(318, 273);
-            this.textEditorControl1.Name = "textEditorControl1";
-            this.textEditorControl1.Size = new System.Drawing.Size(623, 170);
-            this.textEditorControl1.TabIndex = 44;
-            this.textEditorControl1.Text = "textEditorControl1";
-            // 
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Active = false;
@@ -532,6 +523,16 @@
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuMaterialTextbox1.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
             // 
+            // textEditorControl1
+            // 
+            this.bunifuTransition1.SetDecoration(this.textEditorControl1, BunifuAnimatorNS.DecorationType.None);
+            this.textEditorControl1.IsReadOnly = false;
+            this.textEditorControl1.Location = new System.Drawing.Point(318, 273);
+            this.textEditorControl1.Name = "textEditorControl1";
+            this.textEditorControl1.Size = new System.Drawing.Size(623, 170);
+            this.textEditorControl1.TabIndex = 44;
+            this.textEditorControl1.Text = "textEditorControl1";
+            // 
             // bunifuThinButton21
             // 
             this.bunifuThinButton21.ActiveBorderThickness = 1;
@@ -587,7 +588,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(1481, 631);
+            this.ClientSize = new System.Drawing.Size(1300, 631);
             this.Controls.Add(this.textBox20);
             this.Controls.Add(this.bunifuiOSSwitch20);
             this.Controls.Add(this.bunifuThinButton21);

@@ -48,7 +48,7 @@ namespace OEBSHelper
             var wArea = Screen.PrimaryScreen.WorkingArea;
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
-
+            bunifuMaterialTextbox1.Text = bunifuMaterialTextbox1.Text + " " + Form1.GlobalParam.monitor_count;
             AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
@@ -56,18 +56,18 @@ namespace OEBSHelper
         {
             if (bunifuiOSSwitch1.Value)
             {
-                timer2.Interval = 90000; // specify interval time as you want
-                timer2.Tick += new EventHandler(timer2_Tick);
+                timer1.Interval = 90000; // specify interval time as you want
+                timer1.Tick += new EventHandler(timer1_Tick);
                 bunifuCircleProgressbar1.Value = 50;
                 bunifuCircleProgressbar1.animated = true;
                 bunifuCircleProgressbar1.animationIterval = 5;
                 bunifuCircleProgressbar1.animationSpeed = 5;
                 ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
-                timer2.Start();
+                timer1.Start();
             }
             else
             {
-                timer2.Stop();
+                timer1.Stop();
                 bunifuCircleProgressbar1.Value = 0;
                 bunifuCircleProgressbar1.animated = false;
                 textBox1.Text = "";
@@ -79,8 +79,8 @@ namespace OEBSHelper
         {
             if (bunifuiOSSwitch20.Value)
             {
-                timer1.Interval = 10000; // specify interval time as you want
-                timer1.Tick += new EventHandler(timer1_Tick);
+                timer2.Interval = 10000; // specify interval time as you want
+                timer2.Tick += new EventHandler(timer2_Tick);
                 bunifuCircleProgressbar30.Value = 50;
                 bunifuCircleProgressbar30.animated = true;
                 bunifuCircleProgressbar30.animationIterval = 5;
@@ -88,13 +88,13 @@ namespace OEBSHelper
                 ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
-                timer1.Start();
+                timer2.Start();
 
                 // MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                timer1.Stop();
+                timer2.Stop();
                 bunifuCircleProgressbar30.Value = 0;
                 bunifuCircleProgressbar30.animated = false;
                 textBox20.Text = "";

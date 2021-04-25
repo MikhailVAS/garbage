@@ -23,6 +23,7 @@ namespace OEBSHelper
             public static string email_2 { get; set; }
             public static string smtp { get; set; }
             public static string smtp_port { get; set; }
+            public static string monitor_count { get; set; }
         }
 
         public Form1()
@@ -45,24 +46,25 @@ namespace OEBSHelper
             GlobalParam.email_2 = bunifuMetroTextbox9.Text;
             GlobalParam.smtp = bunifuMetroTextbox11.Text;
             GlobalParam.smtp_port = bunifuMetroTextbox10.Text;
+            GlobalParam.monitor_count = bunifuMetroTextbox8.Text;
             // OracleConnection conn = DBUtils.GetDBConnection();
-          /* !!!!!!!!   Debug comment
-            
-           OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
+            /* !!!!!!!!   Debug comment
 
-            bunifuCustomLabel7.Text = "Get Connection: " + conn;
-            try
-            {
-                conn.Open();
+             OracleConnection conn = DBOracleUtils.GetDBConnection(GlobalParam.host, GlobalParam.port, GlobalParam.sid, GlobalParam.user, GlobalParam.password);
 
-                bunifuCustomLabel7.Text = conn.ConnectionString + "Successful Connection";
-            }
-            catch (Exception ex)
-            {
-                bunifuCustomLabel7.Text = "## ERROR: " + ex.Message;
-                return;
-            }
-          */
+              bunifuCustomLabel7.Text = "Get Connection: " + conn;
+              try
+              {
+                  conn.Open();
+
+                  bunifuCustomLabel7.Text = conn.ConnectionString + "Successful Connection";
+              }
+              catch (Exception ex)
+              {
+                  bunifuCustomLabel7.Text = "## ERROR: " + ex.Message;
+                  return;
+              }
+            */
             bunifuCustomLabel7.Text = "Connection successful!";
            this.Hide();
             Form2 f2 = new Form2();
