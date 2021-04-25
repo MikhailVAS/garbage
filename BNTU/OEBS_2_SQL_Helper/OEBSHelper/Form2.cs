@@ -16,7 +16,7 @@ namespace OEBSHelper
     public partial class Form2 : Form
     {
 
-        [Flags] 
+        [Flags]
         enum AnimateWindowFlags
         {
             AW_HOR_POSITIVE = 0x00000001,
@@ -49,30 +49,44 @@ namespace OEBSHelper
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
             bunifuMaterialTextbox1.Text = bunifuMaterialTextbox1.Text + " " + Form1.GlobalParam.monitor_count;
-          //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
+            //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
+        }
+
+         private void ControlInit(bool value, String ComponentName )
+        {
+            MessageBox.Show(ComponentName, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+            if (value is true)
+            {
+
+                
+                /*  timer1.Interval = Convert.ToInt32(bunifuMetroTextbox11.Text); // specify interval time as you want
+                  timer1.Tick += new EventHandler(timer1_Tick);
+                  bunifuCircleProgressbar1.Value = 50;
+                  bunifuCircleProgressbar1.animated = true;
+                  bunifuCircleProgressbar1.animationIterval = 5;
+                  bunifuCircleProgressbar1.animationSpeed = 5;
+
+                  ExecuteSQL(textEditorControl1.Text, false);
+                  timer1.Start(); */
+                 MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+         }
+            else
+            {
+                /*  timer1.Stop();
+                  bunifuCircleProgressbar1.Value = 0;
+                  bunifuCircleProgressbar1.animated = false;
+                  textBox1.Text = "";*/
+                MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
+
         }
 
         private void bunifuiOSSwitch1_Click(object sender, EventArgs e)
         {
-            if (bunifuiOSSwitch1.Value)
-            {
-                timer1.Interval = 90000; // specify interval time as you want
-                timer1.Tick += new EventHandler(timer1_Tick);
-                bunifuCircleProgressbar1.Value = 50;
-                bunifuCircleProgressbar1.animated = true;
-                bunifuCircleProgressbar1.animationIterval = 5;
-                bunifuCircleProgressbar1.animationSpeed = 5;
-                ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
-                timer1.Start();
-            }
-            else
-            {
-                timer1.Stop();
-                bunifuCircleProgressbar1.Value = 0;
-                bunifuCircleProgressbar1.animated = false;
-                textBox1.Text = "";
-            }
-
+            ControlInit(bunifuiOSSwitch1.Value, bunifuiOSSwitch1.Name);
         }
 
         private void bunifuiOSSwitch2_Click(object sender, EventArgs e)
@@ -291,6 +305,11 @@ namespace OEBSHelper
                     }
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
         {
 
         }
