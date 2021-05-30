@@ -44,7 +44,7 @@ namespace OEBSHelper
         private void Form2_Load(object sender, EventArgs e)
         {
             textBox1.Text = "";
-            textBox20.Text = "";
+          //  textBox20.Text = "";
             var wArea = Screen.PrimaryScreen.WorkingArea;
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
@@ -52,33 +52,41 @@ namespace OEBSHelper
             //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
-         private void ControlInit(bool value, String ComponentName )
+         private void ControlInit(bool value, String ComponentName , String SQL)
         {
             MessageBox.Show(ComponentName, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
 
             if (value is true)
             {
-
+                timer1.Interval = Convert.ToInt32(bunifuMetroTextbox11.Text) * 1000; // specify interval time as you want
+                timer1.Tick += new EventHandler(timer1_Tick);
+                bunifuCircleProgressbar1.Value = 50;
+                bunifuCircleProgressbar1.animated = true;
+                bunifuCircleProgressbar1.animationIterval = 5;
+                bunifuCircleProgressbar1.animationSpeed = 5;
+                timer1.Start();
+                MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(SQL, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 
-                /*  timer1.Interval = Convert.ToInt32(bunifuMetroTextbox11.Text); // specify interval time as you want
-                  timer1.Tick += new EventHandler(timer1_Tick);
-                  bunifuCircleProgressbar1.Value = 50;
-                  bunifuCircleProgressbar1.animated = true;
-                  bunifuCircleProgressbar1.animationIterval = 5;
-                  bunifuCircleProgressbar1.animationSpeed = 5;
-
-                  ExecuteSQL(textEditorControl1.Text, false);
-                  timer1.Start(); */
-                 MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-         }
+                //  if
+                //  { notifyIcon1.Icon = this.Icon;
+                //     notifyIcon1.Visible = true;
+                //     }
+                // ExecuteSQL(textEditorControl1.Text, false);
+            }
             else
             {
-                /*  timer1.Stop();
+                  timer1.Stop();
+                timer1.Tick -= new EventHandler(timer1_Tick);
                   bunifuCircleProgressbar1.Value = 0;
                   bunifuCircleProgressbar1.animated = false;
-                  textBox1.Text = "";*/
+                  textBox1.Text = "";
                 MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //  if
+                //  { notifyIcon1.Icon = this.Icon;
+                //     notifyIcon1.Visible = true;
+                //     }
 
             }
 
@@ -86,12 +94,12 @@ namespace OEBSHelper
 
         private void bunifuiOSSwitch1_Click(object sender, EventArgs e)
         {
-            ControlInit(bunifuiOSSwitch1.Value, bunifuiOSSwitch1.Name);
+            ControlInit(bunifuiOSSwitch1.Value, bunifuiOSSwitch1.Name, textEditorControl1.Text);
         }
 
         private void bunifuiOSSwitch2_Click(object sender, EventArgs e)
         {
-            if (bunifuiOSSwitch20.Value)
+          /*  if (bunifuiOSSwitch20.Value)
             {
                 timer2.Interval = 10000; // specify interval time as you want
                 timer2.Tick += new EventHandler(timer2_Tick);
@@ -116,7 +124,7 @@ namespace OEBSHelper
                 notifyIcon1.Visible = true;
 
                 //  MessageBox.Show("No", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            } */
         }
 
         private void MailSend()
@@ -189,7 +197,7 @@ namespace OEBSHelper
 
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
                             // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
-                            textBox20.Text = LAST_UPDATED_BY;
+                        //    textBox20.Text = LAST_UPDATED_BY;
                             if (Convert.ToInt32(LAST_UPDATED_BY) > 0)
                             {
                                 notifyIcon1.Icon = SystemIcons.Error;
@@ -241,19 +249,19 @@ namespace OEBSHelper
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // MessageBox.Show("bla-BLA0-LBA");
-            ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
+            MessageBox.Show("T1");
+         //   ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            /// MessageBox.Show("T1");
-            ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
+             MessageBox.Show("T2");
+            //ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Closing programm ? ", "OEBS Helper",
+            if (MessageBox.Show("Closing programm ? ", "DataBase Helper",
          MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 closing = false;
@@ -285,33 +293,9 @@ namespace OEBSHelper
             }
         }
 
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        private void bunifuiOSSwitch1_OnValueChange_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void bunifuDatepicker1_onValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuDropdown1_onItemSelected(object sender, EventArgs e)
-        {
-                    }
-
-        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
-        {
-
+            ControlInit(bunifuiOSSwitch1.Value, bunifuiOSSwitch1.Name, textEditorControl1.Text);
         }
     }
 }
