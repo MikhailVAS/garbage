@@ -37,3 +37,16 @@ D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplet
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
 D:\Git\BNTU\OEBS_2_SQL_Helper\OEBSHelper\bin\Debug\ICSharpCode.TextEditor.dll
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe.config
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.exe
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\OEBSHelper.pdb
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\ICSharpCode.TextEditor.dll
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\Tulpep.NotificationWindow.dll
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form1.resources
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Form2.resources
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.Properties.Resources.resources
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.GenerateResource.cache
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompileInputs.cache
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
