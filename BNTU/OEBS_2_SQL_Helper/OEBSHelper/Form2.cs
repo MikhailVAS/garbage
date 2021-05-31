@@ -68,11 +68,8 @@ namespace OEBSHelper
                 timer1.Start();
                 MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 MessageBox.Show(SQL, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                
-                //  if
-                //  { notifyIcon1.Icon = this.Icon;
-                //     notifyIcon1.Visible = true;
-                //     }
+                notifyIcon1.Icon = this.Icon;
+                notifyIcon1.Visible = true;
                 // ExecuteSQL(textEditorControl1.Text, false);
             }
             else
@@ -83,10 +80,10 @@ namespace OEBSHelper
                   bunifuCircleProgressbar1.animated = false;
                   textBox1.Text = "";
                 MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                //  if
-                //  { notifyIcon1.Icon = this.Icon;
-                //     notifyIcon1.Visible = true;
-                //     }
+                  
+                 notifyIcon1.Icon = this.Icon;
+                 notifyIcon1.Visible = true;
+                    
 
             }
 

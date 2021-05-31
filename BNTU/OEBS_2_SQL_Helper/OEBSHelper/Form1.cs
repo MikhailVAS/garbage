@@ -117,7 +117,9 @@ namespace OEBSHelper
             }
         }
 
-        public void saveFile(string host, string port, string sid, string user_name, string pas, string mail_pas, string mail_sender, string mail_cop, string mail_port, string mail_smtp)
+        public void saveFile(string host, string port, string sid, string user_name,
+                             string pas, string mail_pas, string mail_sender, string mail_cop,
+                             string mail_port, string mail_smtp)
         {
             string Msg = host + ";" + port + ";" + sid + ";" + user_name + ";" + pas + ";" + sid 
                 + ";" + mail_pas + ";" + mail_sender +";" + mail_cop + ";" + mail_port + ";" + mail_smtp;
@@ -152,8 +154,6 @@ namespace OEBSHelper
                         bunifuMetroTextbox9.Text = tempArray[7];
                         bunifuMetroTextbox10.Text = tempArray[8];
                         bunifuMetroTextbox11.Text = tempArray[9];
-
-
                     }
                 }
         }
