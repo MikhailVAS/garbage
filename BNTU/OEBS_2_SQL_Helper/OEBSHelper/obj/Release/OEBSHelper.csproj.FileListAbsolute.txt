@@ -1,5 +1,0 @@
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Release\OEBSHelper.Form1.resources
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Release\OEBSHelper.Form2.resources
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Release\OEBSHelper.Properties.Resources.resources
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Release\OEBSHelper.csproj.GenerateResource.cache
-C:\Users\User\Documents\garbage\BNTU\OEBS_2_SQL_Helper\OEBSHelper\obj\Release\OEBSHelper.csproj.CoreCompileInputs.cache
