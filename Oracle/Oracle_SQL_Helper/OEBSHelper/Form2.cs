@@ -53,13 +53,13 @@ namespace OEBSHelper
         }
 
          private void ControlInit(BunifuiOSSwitch Switch, String SQL,BunifuCircleProgressbar CircleProgressbar,
-                                  BunifuMetroTextbox ms, Timer Timer_sec,TextBox CountBox)
+                                  BunifuMetroTextbox ms, Timer Timer_sec,TextBox CountBox, EventHandler EventName)
         {
             MessageBox.Show(Switch.Name, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             if (Switch.Value is true)
             {
                 Timer_sec.Interval = Convert.ToInt32(ms.Text) * 1000; // specify interval time as you want
-                Timer_sec.Tick += new EventHandler(timer1_Tick);
+                Timer_sec.Tick += new EventHandler(EventName);
                 CircleProgressbar.Value = 50;
                 CircleProgressbar.animated = true;
                 CircleProgressbar.animationIterval = 5;
@@ -74,7 +74,7 @@ namespace OEBSHelper
             else
             {
                 Timer_sec.Stop();
-                Timer_sec.Tick -= new EventHandler(timer1_Tick);
+                Timer_sec.Tick -= new EventHandler(EventName);
                 CircleProgressbar.Value = 0;
                 CircleProgressbar.animated = false;
                 CountBox.Text = "";
@@ -254,7 +254,7 @@ namespace OEBSHelper
         private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch1, textEditorControl1.Text, bunifuCircleProgressbar1, bunifuMetroTextbox11,
-     timer1, textBox1);
+     timer1, textBox1, timer1_Tick);
         }
     }
 }
