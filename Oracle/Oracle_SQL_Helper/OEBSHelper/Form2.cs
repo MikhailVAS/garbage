@@ -32,6 +32,7 @@ namespace OEBSHelper
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);
+        private Boolean ReversParam = true;
 
         public Form2()
         {
@@ -255,6 +256,45 @@ namespace OEBSHelper
         {
             ControlInit(bunifuiOSSwitch1, textEditorControl1.Text, bunifuCircleProgressbar1, bunifuMetroTextbox11,
      timer1, textBox1, timer1_Tick);
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+              if (this.ReversParam)
+            {
+                this.Size = new Size(this.Size.Width - 480, this.Size.Height);
+                bunifuImageButton1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+                bunifuImageButton1.Refresh();
+                bunifuImageButton7.Left = 213;
+                this.ReversParam = false;
+                 panel1.Size = new Size(230, 185) ;
+                 panel2.Size = new Size(230, 185);
+                 panel3.Size = new Size(230, 185) ;
+                 panel4.Size = new Size(230, 185) ;
+                 panel5.Size = new Size(230, 185) ;
+                 panel6.Size = new Size(230, 185) ;
+                /*for (int i = 1; i <= 6; i++) 
+                   {
+                      this.Controls["panel" + i.ToString()].Size = new Size(230, 185);
+
+                   } */
+            }
+            else             
+            {
+                //  MessageBox.Show("T2");
+                this.Size = new Size(this.Size.Width + 480, this.Size.Height);
+                bunifuImageButton1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+                bunifuImageButton1.Refresh();
+                bunifuImageButton7.Left = 697;
+                panel1.Width = 706;
+                panel2.Width = 706;
+                panel3.Width = 706;
+                panel4.Width = 706;
+                panel5.Width = 706;
+                panel6.Width = 706;
+                this.ReversParam = true;
+            } 
         }
     }
 }
