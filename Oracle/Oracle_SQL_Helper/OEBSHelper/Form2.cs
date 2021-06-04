@@ -54,7 +54,7 @@ namespace OEBSHelper
         }
 
          private void ControlInit(BunifuiOSSwitch Switch, String SQL,BunifuCircleProgressbar CircleProgressbar,
-                                  BunifuMetroTextbox ms, Timer Timer_sec,TextBox CountBox, EventHandler EventName)
+                                  BunifuMetroTextbox ms, Timer Timer_sec,TextBox CountBoxs, EventHandler EventName)
         {
             MessageBox.Show(Switch.Name, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             if (Switch.Value is true)
@@ -78,7 +78,7 @@ namespace OEBSHelper
                 Timer_sec.Tick -= new EventHandler(EventName);
                 CircleProgressbar.Value = 0;
                 CircleProgressbar.animated = false;
-                CountBox.Text = "";
+                CountBoxs.Text = "";
                 MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
@@ -86,14 +86,14 @@ namespace OEBSHelper
 
         }
 
-        private void MailSend()
+        private void MailSend(BunifuMaterialTextbox MonitorName)
         {
             MailMessage message = new MailMessage();
             SmtpClient SmtpServer = new SmtpClient(Form1.GlobalParam.smtp); 
             message.From = new MailAddress(Form1.GlobalParam.email_1);
             message.To.Add(Form1.GlobalParam.email_1);
-            message.Subject = "Cost Manager Error";
-            message.Body = "Cost Manager - Трагически пал в бою за справедливость";
+            message.Subject = MonitorName.Text + " Error";
+            message.Body = MonitorName.Text + "Error or not valid";
             if (Form1.GlobalParam.email_2.Length > 0  )
               {
                 MailAddress copy = new MailAddress(Form1.GlobalParam.email_2); 
@@ -112,7 +112,7 @@ namespace OEBSHelper
                 MessageBox.Show(g.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
-        private void ExecuteSQL(String SQL, Boolean Costing)
+        private void ExecuteSQL(String SQL, Boolean Costing, TextBox CountTextBox , BunifuMaterialTextbox MonitorName )
         {
             // Получить объект Connection для подключения к DB.
              //OracleConnection conn = DBUtils.GetDBConnection();
@@ -121,7 +121,7 @@ namespace OEBSHelper
             conn.Open();
             try
             {
-                QueryEmployee(conn, SQL, Costing);
+                QueryEmployee(conn, SQL, Costing, CountTextBox , MonitorName);
             }
             catch (Exception ex)
             {
@@ -135,7 +135,7 @@ namespace OEBSHelper
             Console.Read();
         }
 
-        private void QueryEmployee(OracleConnection conn, String sqlquery, Boolean RealCosting)
+        private void QueryEmployee(OracleConnection conn, String sqlquery, Boolean RealCosting, TextBox CountBox, BunifuMaterialTextbox MonitorName)
         {
             string sql = sqlquery;
             // Создать объект Command.
@@ -156,16 +156,16 @@ namespace OEBSHelper
 
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
                             // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
-                        //    textBox20.Text = LAST_UPDATED_BY;
+                                CountBox.Text = LAST_UPDATED_BY;
                             if (Convert.ToInt32(LAST_UPDATED_BY) > 0)
                             {
                                 notifyIcon1.Icon = SystemIcons.Error;
                                 notifyIcon1.Visible = true;
                                 PopupNotifier popup = new PopupNotifier();
-                                popup.TitleText = "               ############# WARNING #############";
-                                popup.ContentText = "\n                     Error    Cost    Manager               ";
+                                popup.TitleText = "    ############# WARNING #############";
+                                popup.ContentText = "\n     " +  MonitorName.Text + "               ";
                                 popup.Popup();
-                                MailSend();
+                                MailSend(MonitorName);
                             }
                             else
                             {
@@ -176,7 +176,7 @@ namespace OEBSHelper
                         else
                         {
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
-                            textBox1.Text = LAST_UPDATED_BY;
+                            CountBox.Text = LAST_UPDATED_BY;
                             notifyIcon1.Icon = this.Icon;
                             notifyIcon1.Visible = true;
                         }
