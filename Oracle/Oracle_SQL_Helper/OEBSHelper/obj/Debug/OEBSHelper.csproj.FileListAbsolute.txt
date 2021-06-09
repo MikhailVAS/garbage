@@ -50,3 +50,6 @@ D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompi
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\BunifuDataViz 1.0.1.dll
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\Bunifu_UI_v1.5.4.dll
+D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\bin\Debug\Oracle.ManagedDataAccess.dll

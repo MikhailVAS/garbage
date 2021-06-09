@@ -121,8 +121,8 @@ namespace OEBSHelper
                              string pas, string mail_pas, string mail_sender, string mail_cop,
                              string mail_port, string mail_smtp)
         {
-            string Msg = host + ";" + port + ";" + sid + ";" + user_name + ";" + pas + ";" + sid 
-                + ";" + mail_pas + ";" + mail_sender +";" + mail_cop + ";" + mail_port + ";" + mail_smtp;
+            string Msg = host + ";" + port + ";" + sid + ";" + user_name + ";" + pas + ";"
+                + mail_pas + ";" + mail_sender + ";" + mail_cop + ";" + mail_port + ";" + mail_smtp;
 
             // Save File to .txt  
             FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
@@ -135,15 +135,16 @@ namespace OEBSHelper
 
         public void ReadFile()
         {
+
             if (File.Exists(dirParameter))
                 using (StreamReader streamReader = new StreamReader(dirParameter))
-                
+
                 {
-           
-                string line = string.Empty;
-                while ((line = streamReader.ReadLine()) != null)
-                   {
-                    string[] tempArray = line.Split(';');
+
+                    string line = string.Empty;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        string[] tempArray = line.Split(';');
                         bunifuMetroTextbox1.Text = tempArray[0];
                         bunifuMetroTextbox2.Text = tempArray[1];
                         bunifuMetroTextbox3.Text = tempArray[2];
@@ -158,14 +159,57 @@ namespace OEBSHelper
                 }
         }
 
-            private void bunifuImageButton2_Click(object sender, EventArgs e)
+        public void ReadFileDiaolg()
+        {
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "dirParameter";
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                SaveEvent();
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (StreamReader streamReader = new StreamReader(dirParameter))
+                        {
+                            string line = string.Empty;
+                            while ((line = streamReader.ReadLine()) != null)
+                            {
+                                string[] tempArray = line.Split(';');
+                                bunifuMetroTextbox1.Text = tempArray[0];
+                                bunifuMetroTextbox2.Text = tempArray[1];
+                                bunifuMetroTextbox3.Text = tempArray[2];
+                                bunifuMetroTextbox4.Text = tempArray[3];
+                                bunifuMetroTextbox5.Text = tempArray[4];
+                                bunifuMetroTextbox6.Text = tempArray[5];
+                                bunifuMetroTextbox7.Text = tempArray[6];
+                                bunifuMetroTextbox9.Text = tempArray[7];
+                                bunifuMetroTextbox10.Text = tempArray[8];
+                                bunifuMetroTextbox11.Text = tempArray[9];
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
             }
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            SaveEvent();
+        }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            //ReadFile();
+            ReadFileDiaolg();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -178,5 +222,5 @@ namespace OEBSHelper
             SaveEvent();
         }
     }
-    }
+}
 
