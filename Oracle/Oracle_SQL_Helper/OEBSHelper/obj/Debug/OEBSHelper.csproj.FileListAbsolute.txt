@@ -50,4 +50,3 @@ D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CoreCompi
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csproj.CopyComplete
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.exe
 D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.pdb
-D:\Git\Oracle\Oracle_SQL_Helper\OEBSHelper\obj\Debug\OEBSHelper.csprojAssemblyReference.cache
