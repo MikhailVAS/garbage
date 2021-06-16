@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -46,7 +46,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuiOSSwitch5 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TimeTextbox5 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEditorControl5 = new ICSharpCode.TextEditor.TextEditorControl();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuiOSSwitch4 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TimeTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEditorControl4 = new ICSharpCode.TextEditor.TextEditorControl();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuiOSSwitch3 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TimeTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEditorControl3 = new ICSharpCode.TextEditor.TextEditorControl();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -76,7 +76,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuiOSSwitch2 = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TimeTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEditorControl2 = new ICSharpCode.TextEditor.TextEditorControl();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -116,9 +116,6 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
             // 
             // bunifuElipse1
             // 
@@ -211,22 +208,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation2;
             // 
             // contextMenuStrip1
             // 
@@ -263,7 +260,7 @@
             // 
             this.panel6.Controls.Add(this.bunifuCustomLabel9);
             this.panel6.Controls.Add(this.bunifuiOSSwitch5);
-            this.panel6.Controls.Add(this.bunifuMetroTextbox4);
+            this.panel6.Controls.Add(this.TimeTextbox5);
             this.panel6.Controls.Add(this.bunifuCustomLabel11);
             this.panel6.Controls.Add(this.textEditorControl5);
             this.panel6.Controls.Add(this.textBox5);
@@ -302,28 +299,29 @@
             this.bunifuiOSSwitch5.Size = new System.Drawing.Size(35, 20);
             this.bunifuiOSSwitch5.TabIndex = 23;
             this.bunifuiOSSwitch5.Value = false;
+            this.bunifuiOSSwitch5.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch5_OnValueChange);
             // 
-            // bunifuMetroTextbox4
+            // TimeTextbox5
             // 
-            this.bunifuMetroTextbox4.BorderColorFocused = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox4.BorderColorIdle = System.Drawing.Color.Gray;
-            this.bunifuMetroTextbox4.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox4.BorderThickness = 2;
-            this.bunifuMetroTextbox4.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMetroTextbox4.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuMetroTextbox4.isPassword = false;
-            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(162, 145);
-            this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox4.MaxLength = 32767;
-            this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
-            this.bunifuMetroTextbox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuMetroTextbox4.Size = new System.Drawing.Size(52, 22);
-            this.bunifuMetroTextbox4.TabIndex = 49;
-            this.bunifuMetroTextbox4.Text = "10";
-            this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TimeTextbox5.BorderColorFocused = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox5.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TimeTextbox5.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox5.BorderThickness = 2;
+            this.TimeTextbox5.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TimeTextbox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.TimeTextbox5, BunifuAnimatorNS.DecorationType.None);
+            this.TimeTextbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TimeTextbox5.ForeColor = System.Drawing.Color.Silver;
+            this.TimeTextbox5.isPassword = false;
+            this.TimeTextbox5.Location = new System.Drawing.Point(162, 145);
+            this.TimeTextbox5.Margin = new System.Windows.Forms.Padding(4);
+            this.TimeTextbox5.MaxLength = 32767;
+            this.TimeTextbox5.Name = "TimeTextbox5";
+            this.TimeTextbox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TimeTextbox5.Size = new System.Drawing.Size(52, 22);
+            this.TimeTextbox5.TabIndex = 49;
+            this.TimeTextbox5.Text = "10";
+            this.TimeTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel11
             // 
@@ -358,10 +356,10 @@
             this.bunifuTransition1.SetDecoration(this.textBox5, BunifuAnimatorNS.DecorationType.None);
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox5.Location = new System.Drawing.Point(67, 78);
+            this.textBox5.Location = new System.Drawing.Point(46, 78);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(0, 33);
+            this.textBox5.Size = new System.Drawing.Size(87, 33);
             this.textBox5.TabIndex = 46;
             this.textBox5.Text = "777";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -437,7 +435,7 @@
             // 
             this.panel5.Controls.Add(this.bunifuCustomLabel7);
             this.panel5.Controls.Add(this.bunifuiOSSwitch4);
-            this.panel5.Controls.Add(this.bunifuMetroTextbox3);
+            this.panel5.Controls.Add(this.TimeTextbox4);
             this.panel5.Controls.Add(this.bunifuCustomLabel8);
             this.panel5.Controls.Add(this.textEditorControl4);
             this.panel5.Controls.Add(this.textBox4);
@@ -476,28 +474,29 @@
             this.bunifuiOSSwitch4.Size = new System.Drawing.Size(35, 20);
             this.bunifuiOSSwitch4.TabIndex = 23;
             this.bunifuiOSSwitch4.Value = false;
+            this.bunifuiOSSwitch4.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch4_OnValueChange);
             // 
-            // bunifuMetroTextbox3
+            // TimeTextbox4
             // 
-            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.Gray;
-            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox3.BorderThickness = 2;
-            this.bunifuMetroTextbox3.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuMetroTextbox3.isPassword = false;
-            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(162, 145);
-            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox3.MaxLength = 32767;
-            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(52, 22);
-            this.bunifuMetroTextbox3.TabIndex = 49;
-            this.bunifuMetroTextbox3.Text = "10";
-            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TimeTextbox4.BorderColorFocused = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox4.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TimeTextbox4.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox4.BorderThickness = 2;
+            this.TimeTextbox4.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TimeTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.TimeTextbox4, BunifuAnimatorNS.DecorationType.None);
+            this.TimeTextbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TimeTextbox4.ForeColor = System.Drawing.Color.Silver;
+            this.TimeTextbox4.isPassword = false;
+            this.TimeTextbox4.Location = new System.Drawing.Point(162, 145);
+            this.TimeTextbox4.Margin = new System.Windows.Forms.Padding(4);
+            this.TimeTextbox4.MaxLength = 32767;
+            this.TimeTextbox4.Name = "TimeTextbox4";
+            this.TimeTextbox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TimeTextbox4.Size = new System.Drawing.Size(52, 22);
+            this.TimeTextbox4.TabIndex = 49;
+            this.TimeTextbox4.Text = "10";
+            this.TimeTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel8
             // 
@@ -532,10 +531,10 @@
             this.bunifuTransition1.SetDecoration(this.textBox4, BunifuAnimatorNS.DecorationType.None);
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox4.Location = new System.Drawing.Point(67, 78);
+            this.textBox4.Location = new System.Drawing.Point(46, 78);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(0, 33);
+            this.textBox4.Size = new System.Drawing.Size(87, 33);
             this.textBox4.TabIndex = 46;
             this.textBox4.Text = "777";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -611,7 +610,7 @@
             // 
             this.panel4.Controls.Add(this.bunifuCustomLabel4);
             this.panel4.Controls.Add(this.bunifuiOSSwitch3);
-            this.panel4.Controls.Add(this.bunifuMetroTextbox2);
+            this.panel4.Controls.Add(this.TimeTextbox3);
             this.panel4.Controls.Add(this.bunifuCustomLabel6);
             this.panel4.Controls.Add(this.textEditorControl3);
             this.panel4.Controls.Add(this.textBox3);
@@ -650,28 +649,29 @@
             this.bunifuiOSSwitch3.Size = new System.Drawing.Size(35, 20);
             this.bunifuiOSSwitch3.TabIndex = 23;
             this.bunifuiOSSwitch3.Value = false;
+            this.bunifuiOSSwitch3.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch3_OnValueChange);
             // 
-            // bunifuMetroTextbox2
+            // TimeTextbox3
             // 
-            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.Gray;
-            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox2.BorderThickness = 2;
-            this.bunifuMetroTextbox2.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(162, 145);
-            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox2.MaxLength = 32767;
-            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(52, 22);
-            this.bunifuMetroTextbox2.TabIndex = 49;
-            this.bunifuMetroTextbox2.Text = "10";
-            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TimeTextbox3.BorderColorFocused = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox3.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TimeTextbox3.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox3.BorderThickness = 2;
+            this.TimeTextbox3.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TimeTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.TimeTextbox3, BunifuAnimatorNS.DecorationType.None);
+            this.TimeTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TimeTextbox3.ForeColor = System.Drawing.Color.Silver;
+            this.TimeTextbox3.isPassword = false;
+            this.TimeTextbox3.Location = new System.Drawing.Point(162, 145);
+            this.TimeTextbox3.Margin = new System.Windows.Forms.Padding(4);
+            this.TimeTextbox3.MaxLength = 32767;
+            this.TimeTextbox3.Name = "TimeTextbox3";
+            this.TimeTextbox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TimeTextbox3.Size = new System.Drawing.Size(52, 22);
+            this.TimeTextbox3.TabIndex = 49;
+            this.TimeTextbox3.Text = "10";
+            this.TimeTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel6
             // 
@@ -706,10 +706,10 @@
             this.bunifuTransition1.SetDecoration(this.textBox3, BunifuAnimatorNS.DecorationType.None);
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox3.Location = new System.Drawing.Point(67, 78);
+            this.textBox3.Location = new System.Drawing.Point(46, 78);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(0, 33);
+            this.textBox3.Size = new System.Drawing.Size(87, 33);
             this.textBox3.TabIndex = 46;
             this.textBox3.Text = "777";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -785,7 +785,7 @@
             // 
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
             this.panel3.Controls.Add(this.bunifuiOSSwitch2);
-            this.panel3.Controls.Add(this.bunifuMetroTextbox1);
+            this.panel3.Controls.Add(this.TimeTextbox2);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.textEditorControl2);
             this.panel3.Controls.Add(this.textBox2);
@@ -824,28 +824,29 @@
             this.bunifuiOSSwitch2.Size = new System.Drawing.Size(35, 20);
             this.bunifuiOSSwitch2.TabIndex = 23;
             this.bunifuiOSSwitch2.Value = false;
+            this.bunifuiOSSwitch2.OnValueChange += new System.EventHandler(this.bunifuiOSSwitch2_OnValueChange);
             // 
-            // bunifuMetroTextbox1
+            // TimeTextbox2
             // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.Gray;
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
-            this.bunifuMetroTextbox1.BorderThickness = 2;
-            this.bunifuMetroTextbox1.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTransition1.SetDecoration(this.bunifuMetroTextbox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(162, 145);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.MaxLength = 32767;
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(52, 22);
-            this.bunifuMetroTextbox1.TabIndex = 49;
-            this.bunifuMetroTextbox1.Text = "10";
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TimeTextbox2.BorderColorFocused = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox2.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TimeTextbox2.BorderColorMouseHover = System.Drawing.Color.SeaGreen;
+            this.TimeTextbox2.BorderThickness = 2;
+            this.TimeTextbox2.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TimeTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuTransition1.SetDecoration(this.TimeTextbox2, BunifuAnimatorNS.DecorationType.None);
+            this.TimeTextbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TimeTextbox2.ForeColor = System.Drawing.Color.Silver;
+            this.TimeTextbox2.isPassword = false;
+            this.TimeTextbox2.Location = new System.Drawing.Point(162, 145);
+            this.TimeTextbox2.Margin = new System.Windows.Forms.Padding(4);
+            this.TimeTextbox2.MaxLength = 32767;
+            this.TimeTextbox2.Name = "TimeTextbox2";
+            this.TimeTextbox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TimeTextbox2.Size = new System.Drawing.Size(52, 22);
+            this.TimeTextbox2.TabIndex = 49;
+            this.TimeTextbox2.Text = "10";
+            this.TimeTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel3
             // 
@@ -869,6 +870,7 @@
             this.textEditorControl2.TabIndex = 44;
             this.textEditorControl2.Text = "select \r\n   owner       c1, \r\n   object_type c3,\r\n   object_name c2\r\nfrom \r\n  dba" +
     "_objects \r\nwhere \r\n   status != \'VALID\'\r\norder by\r\n   owner,\r\n   object_type;";
+    
             // 
             // textBox2
             // 
@@ -880,10 +882,10 @@
             this.bunifuTransition1.SetDecoration(this.textBox2, BunifuAnimatorNS.DecorationType.None);
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox2.Location = new System.Drawing.Point(67, 78);
+            this.textBox2.Location = new System.Drawing.Point(46, 78);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(0, 33);
+            this.textBox2.Size = new System.Drawing.Size(87, 33);
             this.textBox2.TabIndex = 46;
             this.textBox2.Text = "777";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1099,10 +1101,10 @@
             this.bunifuTransition1.SetDecoration(this.textBox1, BunifuAnimatorNS.DecorationType.None);
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox1.Location = new System.Drawing.Point(67, 78);
+            this.textBox1.Location = new System.Drawing.Point(46, 78);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(0, 33);
+            this.textBox1.Size = new System.Drawing.Size(87, 33);
             this.textBox1.TabIndex = 46;
             this.textBox1.Text = "777";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1155,11 +1157,7 @@
             this.bunifuMaterialTextbox1.TabIndex = 40;
             this.bunifuMaterialTextbox1.Text = "Not Costing Transaction";
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
+            //  
             // notifyIcon1
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
@@ -1179,6 +1177,7 @@
             this.bunifuDragControl2.Horizontal = true;
             this.bunifuDragControl2.TargetControl = null;
             this.bunifuDragControl2.Vertical = true;
+            // 
             // 
             // Form2
             // 
@@ -1252,7 +1251,7 @@
         private System.Windows.Forms.Panel panel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TimeTextbox4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private ICSharpCode.TextEditor.TextEditorControl textEditorControl4;
         private System.Windows.Forms.TextBox textBox4;
@@ -1262,7 +1261,7 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TimeTextbox3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private ICSharpCode.TextEditor.TextEditorControl textEditorControl3;
         private System.Windows.Forms.TextBox textBox3;
@@ -1272,7 +1271,7 @@
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TimeTextbox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private ICSharpCode.TextEditor.TextEditorControl textEditorControl2;
         private System.Windows.Forms.TextBox textBox2;
@@ -1282,7 +1281,7 @@
         private System.Windows.Forms.Panel panel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuiOSSwitch bunifuiOSSwitch5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TimeTextbox5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private ICSharpCode.TextEditor.TextEditorControl textEditorControl5;
         private System.Windows.Forms.TextBox textBox5;

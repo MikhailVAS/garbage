@@ -43,13 +43,15 @@ namespace OEBSHelper
             InitializeComponent();
             notifyIcon1.Icon = this.Icon;
             notifyIcon1.Visible = true;
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "0";
-            //  textBox20.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
             var wArea = Screen.PrimaryScreen.WorkingArea;
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
@@ -75,7 +77,7 @@ namespace OEBSHelper
                 MessageBox.Show(SQL, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
-                // ExecuteSQL(textEditorControl1.Text, false);
+                // ExecuteSQL(textBox1.Text, false);
             }
             else
             {
@@ -160,7 +162,7 @@ namespace OEBSHelper
                         {
 
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
-                            // bunifuCircleProgressbar1.Value = Convert.ToInt32(LAST_UPDATED_BY);
+                            // BunifuCircleProgressbar.Value = Convert.ToInt32(LAST_UPDATED_BY);
                             CountBox.Text = LAST_UPDATED_BY;
                             if (Convert.ToInt32(LAST_UPDATED_BY) > 0)
                             {
@@ -212,11 +214,6 @@ namespace OEBSHelper
         }
 
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            MessageBox.Show("T2");
-            //ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -250,18 +247,6 @@ namespace OEBSHelper
                 // MessageBox.Show("bla-BLA0-LBA");
                 this.Show();
             }
-        }
-
-        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
-        {
-            ControlInit(bunifuiOSSwitch1, textEditorControl1.Text, bunifuCircleProgressbar1, TimeTextbox1,
-     timer1, textBox1, timer1_Tick);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            MessageBox.Show("T1");
-            //   ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -302,6 +287,66 @@ namespace OEBSHelper
                 panel6.Width = 706;
                 this.ReversParam = true;
             }
+        }
+
+
+        private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
+        {
+            ControlInit(bunifuiOSSwitch1, textEditorControl1.Text, bunifuCircleProgressbar1, TimeTextbox1,
+     timer1, textBox1, timer1_Tick);
+        }
+
+
+        private void bunifuiOSSwitch2_OnValueChange(object sender, EventArgs e)
+        {
+            ControlInit(bunifuiOSSwitch2, textEditorControl2.Text, bunifuCircleProgressbar2, TimeTextbox2,
+       timer2, textBox2, timer2_Tick);
+        }
+
+        private void bunifuiOSSwitch3_OnValueChange(object sender, EventArgs e)
+        {
+            ControlInit(bunifuiOSSwitch3, textEditorControl3.Text, bunifuCircleProgressbar3, TimeTextbox3,
+     timer3, textBox3, timer3_Tick);
+        }
+
+        private void bunifuiOSSwitch4_OnValueChange(object sender, EventArgs e)
+        {
+            ControlInit(bunifuiOSSwitch4, textEditorControl4.Text, bunifuCircleProgressbar4, TimeTextbox4,
+                 timer4, textBox4, timer4_Tick);
+        }
+
+        private void bunifuiOSSwitch5_OnValueChange(object sender, EventArgs e)
+        {
+            ControlInit(bunifuiOSSwitch5, textEditorControl5.Text, bunifuCircleProgressbar5, TimeTextbox5,
+                 timer5, textBox5, timer5_Tick);
+        }
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("T1");
+            //   ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("T2");
+            //ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("T3");
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("T4");
+        }
+
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("T5");
         }
 
     }
