@@ -5,12 +5,21 @@ using Oracle.ManagedDataAccess.Client;
 using OEBSHelper.SqlConn;
 using System.Data.Common;
 using System.IO;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace OEBSHelper
 {
     public partial class Form1 : Form
     {
         public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\set.dbs";
+        public static int Key = 2;
+        string publickey = "12345678";
+        string secretkey = "87654321";
+        byte[] secretkeyByte = { };
+        
+            byte[] publickeybyte = { };
+        
 
         public static class GlobalParam
         {
@@ -124,83 +133,218 @@ namespace OEBSHelper
             string Msg = host + ";" + port + ";" + sid + ";" + user_name + ";" + pas + ";"
                 + mail_pas + ";" + mail_sender + ";" + mail_cop + ";" + mail_port + ";" + mail_smtp;
 
-            // Save File to .txt  
-            FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
-            StreamWriter m_WriterParameter = new StreamWriter(fParameter);
-            m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
-            m_WriterParameter.Write(Msg);
-            m_WriterParameter.Flush();
-            m_WriterParameter.Close();
+
+            /*  FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
+              StreamWriter m_WriterParameter = new StreamWriter(fParameter);
+              m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
+              m_WriterParameter.Write(Msg);
+              m_WriterParameter.Flush();
+              m_WriterParameter.Close(); */
+
+            // Save Params to Encript File   
+            try
+            {
+                secretkeyByte = System.Text.Encoding.UTF8.GetBytes(secretkey);
+                publickeybyte = System.Text.Encoding.UTF8.GetBytes(publickey);
+                // Create a new DESCryptoServiceProvider object
+                // to generate a key and initialization vector (IV).
+                DESCryptoServiceProvider DESalg = new DESCryptoServiceProvider();
+
+                // Create a string to encrypt.
+                string sData = Msg;//"Here is some data to encrypt."
+
+                // Encrypt text to a file using the file name, key, and IV.
+                EncryptTextToFile(sData, secretkeyByte, publickeybyte);
+
+                // Decrypt the text from a file using the file name, key, and IV.
+              //  string Final = DecryptTextFromFile(FileName, DESalg.Key, DESalg.IV);
+
+                // Display the decrypted string to the console.
+               // Console.WriteLine(Final);
+            }
+            catch (Exception e)
+            {
+               // Console.WriteLine(e.Message);
+            }
         }
 
-        public void ReadFile()
+
+        public void ReadFileDiaolg(bool OpenDialogOrLoadForm)
         {
 
-            if (File.Exists(dirParameter))
-                using (StreamReader streamReader = new StreamReader(dirParameter))
-
-                {
-
-                    string line = string.Empty;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        string[] tempArray = line.Split(';');
-                        bunifuMetroTextbox1.Text = tempArray[0];
-                        bunifuMetroTextbox2.Text = tempArray[1];
-                        bunifuMetroTextbox3.Text = tempArray[2];
-                        bunifuMetroTextbox4.Text = tempArray[3];
-                        bunifuMetroTextbox5.Text = tempArray[4];
-                        bunifuMetroTextbox6.Text = tempArray[5];
-                        bunifuMetroTextbox7.Text = tempArray[6];
-                        bunifuMetroTextbox9.Text = tempArray[7];
-                        bunifuMetroTextbox10.Text = tempArray[8];
-                        bunifuMetroTextbox11.Text = tempArray[9];
-                    }
-                }
-        }
-
-        public void ReadFileDiaolg()
-        {
+            secretkeyByte = System.Text.Encoding.UTF8.GetBytes(secretkey);
+            publickeybyte = System.Text.Encoding.UTF8.GetBytes(publickey);
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
+            
             openFileDialog1.InitialDirectory = "dirParameter";
             openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (OpenDialogOrLoadForm == true)
             {
-                try
+
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    try
                     {
-                        using (StreamReader streamReader = new StreamReader(dirParameter))
+                        if ((myStream = openFileDialog1.OpenFile()) != null)
                         {
-                            string line = string.Empty;
-                            while ((line = streamReader.ReadLine()) != null)
+
+                            CryptoStream cStream = new CryptoStream(myStream,
+                                new DESCryptoServiceProvider().CreateDecryptor(secretkeyByte, publickeybyte),
+                                CryptoStreamMode.Read);
+                            //  using (StreamReader sReader = new StreamReader(cStream))
                             {
-                                string[] tempArray = line.Split(';');
-                                bunifuMetroTextbox1.Text = tempArray[0];
-                                bunifuMetroTextbox2.Text = tempArray[1];
-                                bunifuMetroTextbox3.Text = tempArray[2];
-                                bunifuMetroTextbox4.Text = tempArray[3];
-                                bunifuMetroTextbox5.Text = tempArray[4];
-                                bunifuMetroTextbox6.Text = tempArray[5];
-                                bunifuMetroTextbox7.Text = tempArray[6];
-                                bunifuMetroTextbox9.Text = tempArray[7];
-                                bunifuMetroTextbox10.Text = tempArray[8];
-                                bunifuMetroTextbox11.Text = tempArray[9];
+                                // Create a StreamReader using the CryptoStream.
+                                StreamReader sReader = new StreamReader(cStream);
+
+                                string line = string.Empty;
+                                while ((line = sReader.ReadLine()) != null)
+                                {
+                                    string[] tempArray = line.Split(';');
+                                    bunifuMetroTextbox1.Text = tempArray[0];
+                                    bunifuMetroTextbox2.Text = tempArray[1];
+                                    bunifuMetroTextbox3.Text = tempArray[2];
+                                    bunifuMetroTextbox4.Text = tempArray[3];
+                                    bunifuMetroTextbox5.Text = tempArray[4];
+                                    bunifuMetroTextbox6.Text = tempArray[5];
+                                    bunifuMetroTextbox7.Text = tempArray[6];
+                                    bunifuMetroTextbox9.Text = tempArray[7];
+                                    bunifuMetroTextbox10.Text = tempArray[8];
+                                    bunifuMetroTextbox11.Text = tempArray[9];
+                                }
                             }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    }
                 }
             }
+            else
+            {
+                
+                    if (File.Exists(dirParameter))
+                    {
+                    try
+                    {
+                        FileStream fStream = File.Open(dirParameter, FileMode.OpenOrCreate);
+
+                        CryptoStream cStream = new CryptoStream(fStream,
+                            new DESCryptoServiceProvider().CreateDecryptor(secretkeyByte, publickeybyte),
+                            CryptoStreamMode.Read);
+                        //using (StreamReader streamReader = new StreamReader(dirParameter))
+
+
+
+                        StreamReader sReader = new StreamReader(cStream);
+                        string line = string.Empty;
+
+                        while ((line = sReader.ReadLine()) != null)
+                        {
+                            string[] tempArray = line.Split(';');
+                            bunifuMetroTextbox1.Text = tempArray[0];
+                            bunifuMetroTextbox2.Text = tempArray[1];
+                            bunifuMetroTextbox3.Text = tempArray[2];
+                            bunifuMetroTextbox4.Text = tempArray[3];
+                            bunifuMetroTextbox5.Text = tempArray[4];
+                            bunifuMetroTextbox6.Text = tempArray[5];
+                            bunifuMetroTextbox7.Text = tempArray[6];
+                            bunifuMetroTextbox9.Text = tempArray[7];
+                            bunifuMetroTextbox10.Text = tempArray[8];
+                            bunifuMetroTextbox11.Text = tempArray[9];
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    }
+                }
+               
+            }
         }
+
+        // Encrypt data
+        public static void EncryptTextToFile(String Data, byte[] Key, byte[] IV)
+        {
+            try
+            {
+                // Create or open the specified file.
+                FileStream fStream = File.Open(dirParameter, FileMode.OpenOrCreate);
+
+                // Create a CryptoStream using the FileStream
+                // and the passed key and initialization vector (IV).
+                CryptoStream cStream = new CryptoStream(fStream,
+                    new DESCryptoServiceProvider().CreateEncryptor(Key, IV),
+                    CryptoStreamMode.Write);
+
+                // Create a StreamWriter using the CryptoStream.
+                StreamWriter sWriter = new StreamWriter(cStream);
+
+                // Write the data to the stream
+                // to encrypt it.
+                sWriter.WriteLine(Data);
+
+                // Close the streams and
+                // close the file.
+                sWriter.Close();
+                cStream.Close();
+                fStream.Close();
+            }
+            catch (CryptographicException e)
+            {
+                Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                Console.WriteLine("A file error occurred: {0}", e.Message);
+            }
+        }
+
+  /*      public static string DecryptTextFromFile(byte[] Key, byte[] IV)
+        {
+            try
+            {
+                // Create or open the specified file.
+                FileStream fStream = File.Open(dirParameter, FileMode.OpenOrCreate);
+
+                // Create a CryptoStream using the FileStream
+                // and the passed key and initialization vector (IV).
+                CryptoStream cStream = new CryptoStream(fStream,
+                    new DESCryptoServiceProvider().CreateDecryptor(Key, IV),
+                    CryptoStreamMode.Read);
+
+                // Create a StreamReader using the CryptoStream.
+                StreamReader sReader = new StreamReader(cStream);
+
+                // Read the data from the stream
+                // to decrypt it.
+                string val = sReader.ReadLine();
+
+                // Close the streams and
+                // close the file.
+                sReader.Close();
+                cStream.Close();
+                fStream.Close();
+
+                // Return the string.
+                return val;
+            }
+            catch (CryptographicException e)
+            {
+                Console.WriteLine("A Cryptographic error occurred: {0}", e.Message);
+                return null;
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                Console.WriteLine("A file error occurred: {0}", e.Message);
+                return null;
+            }
+        }*/
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
@@ -209,12 +353,12 @@ namespace OEBSHelper
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            ReadFileDiaolg();
+            ReadFileDiaolg(true);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ReadFile();
+            ReadFileDiaolg(false); //ReadFile();
         }
 
         private void bunifuImageButton2_Click_1(object sender, EventArgs e)
