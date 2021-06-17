@@ -251,7 +251,7 @@ namespace OEBSHelper
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
             if (this.ReversParam)
             {
                 this.Size = new Size(this.Size.Width - 480, this.Size.Height);
@@ -265,7 +265,9 @@ namespace OEBSHelper
                 panel4.Size = new Size(230, 185);
                 panel5.Size = new Size(230, 185);
                 panel6.Size = new Size(230, 185);
-
+                // this.Location = new Point(0, 0);
+                //this.Location = new Point(resolution.Right - this.Width, resolution.Bottom);
+                this.Location = new Point(resolution.Width - Size.Width,480);
                 /*for (int i = 1; i <= 6; i++) 
                    {
                       this.Controls["panel" + i.ToString()].Size = new Size(230, 185);
@@ -286,6 +288,8 @@ namespace OEBSHelper
                 panel5.Width = 706;
                 panel6.Width = 706;
                 this.ReversParam = true;
+                // this.Location = new Point(0, 0);
+                this.Location = new Point(resolution.Width - Size.Width, 480);
             }
         }
 
