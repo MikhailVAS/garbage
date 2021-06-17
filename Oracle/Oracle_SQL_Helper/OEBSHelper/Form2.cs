@@ -63,25 +63,27 @@ namespace OEBSHelper
             //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
-        private void ControlInit(BunifuiOSSwitch Switch, String SQL, BunifuCircleProgressbar CircleProgressbar,
-                                 BunifuMetroTextbox ms, Timer Timer_sec, TextBox CountBoxs, EventHandler Event)
+        private void ControlInit(BunifuiOSSwitch MonitorSwitch, String SQL, BunifuCircleProgressbar CircleProgressbar,
+                                 BunifuMetroTextbox TimerTextBox, Timer Timer_sec, TextBox CountBoxs,
+                                 EventHandler Event, BunifuiOSSwitch WarningHintSwitch,
+                                 BunifuMaterialTextbox MonitorName)
         {
-            MessageBox.Show(Switch.Name, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //MessageBox.Show(MonitorSwitch.Name, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
            // EventHandler a = Event;
-            if (Switch.Value is true)
+            if (MonitorSwitch.Value is true)
             {
-                Timer_sec.Interval = Convert.ToInt32(ms.Text) * 1000; // specify interval time as you want
+                Timer_sec.Interval = Convert.ToInt32(TimerTextBox.Text) * 1000; // specify interval time as you want
                 Timer_sec.Tick += Event;
                 CircleProgressbar.Value = 50;
                 CircleProgressbar.animated = true;
                 CircleProgressbar.animationIterval = 5;
                 CircleProgressbar.animationSpeed = 5;
                 Timer_sec.Start();
-                MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                MessageBox.Show(SQL, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+               // MessageBox.Show("Yes", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+               // MessageBox.Show(SQL, "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
-                // ExecuteSQL(textBox1.Text, false);
+                 ExecuteSQL(SQL, CountBoxs, MonitorName, WarningHintSwitch);
             }
             else
             {
@@ -90,7 +92,7 @@ namespace OEBSHelper
                 CircleProgressbar.Value = 0;
                 CircleProgressbar.animated = false;
                 CountBoxs.Text = "";
-                MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+               // MessageBox.Show("NO", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
             }
@@ -123,7 +125,8 @@ namespace OEBSHelper
                 MessageBox.Show(g.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
-        private void ExecuteSQL(String SQL, Boolean Costing, TextBox CountTextBox, BunifuMaterialTextbox MonitorName)
+        private void ExecuteSQL(String SQL, TextBox CountTextBox, BunifuMaterialTextbox MonitorName,
+                                BunifuiOSSwitch WarningHintSwitch) 
         {
             // Получить объект Connection для подключения к DB.
             //OracleConnection conn = DBUtils.GetDBConnection();
@@ -132,7 +135,7 @@ namespace OEBSHelper
             conn.Open();
             try
             {
-                QueryEmployee(conn, SQL, Costing, CountTextBox, MonitorName);
+                QueryEmployee(conn, SQL, WarningHintSwitch, CountTextBox, MonitorName);
             }
             catch (Exception ex)
             {
@@ -146,7 +149,7 @@ namespace OEBSHelper
             Console.Read();
         }
 
-        private void QueryEmployee(OracleConnection conn, String sqlquery, Boolean RealCosting, TextBox CountBox, BunifuMaterialTextbox MonitorName)
+        private void QueryEmployee(OracleConnection conn, String sqlquery, BunifuiOSSwitch WarningHintSwitch, TextBox CountBox, BunifuMaterialTextbox MonitorName)
         {
             string sql = sqlquery;
             // Создать объект Command.
@@ -162,7 +165,7 @@ namespace OEBSHelper
                 {
                     while (reader.Read())
                     {
-                        if (RealCosting)
+                        if (WarningHintSwitch.Value is true)
                         {
 
                             String LAST_UPDATED_BY = Convert.ToString(reader.GetValue(0));
@@ -216,8 +219,6 @@ namespace OEBSHelper
             //    notifyIcon1.Visible = true;
             //}
         }
-
-
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -381,60 +382,63 @@ namespace OEBSHelper
         private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch1, textEditorControl1.Text, bunifuCircleProgressbar1, TimeTextbox1,
-     timer1, textBox1, timer1_Tick);
+     timer1, textBox1, timer1_Tick, WarningHintSwitch1, bunifuMaterialTextbox1);
         }
 
 
         private void bunifuiOSSwitch2_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch2, textEditorControl2.Text, bunifuCircleProgressbar2, TimeTextbox2,
-       timer2, textBox2, timer2_Tick);
+       timer2, textBox2, timer2_Tick, WarningHintSwitch2, bunifuMaterialTextbox2);
         }
 
         private void bunifuiOSSwitch3_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch3, textEditorControl3.Text, bunifuCircleProgressbar3, TimeTextbox3,
-     timer3, textBox3, timer3_Tick);
+     timer3, textBox3, timer3_Tick, WarningHintSwitch3, bunifuMaterialTextbox3);
         }
 
         private void bunifuiOSSwitch4_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch4, textEditorControl4.Text, bunifuCircleProgressbar4, TimeTextbox4,
-                 timer4, textBox4, timer4_Tick);
+                 timer4, textBox4, timer4_Tick, WarningHintSwitch4, bunifuMaterialTextbox4);
         }
 
         private void bunifuiOSSwitch5_OnValueChange(object sender, EventArgs e)
         {
             ControlInit(bunifuiOSSwitch5, textEditorControl5.Text, bunifuCircleProgressbar5, TimeTextbox5,
-                 timer5, textBox5, timer5_Tick);
+                 timer5, textBox5, timer5_Tick, WarningHintSwitch4, bunifuMaterialTextbox5);
         }
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("T1");
-            //   ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'E'", true);
+           // MessageBox.Show("T1");
+            ExecuteSQL(textEditorControl1.Text, textBox1, bunifuMaterialTextbox1, WarningHintSwitch1);
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("T2");
-            //ExecuteSQL("SELECT COUNT (1) FROM inv.mtl_material_transactions WHERE costed_flag = 'N'", false);
+            //MessageBox.Show("T2");
+            ExecuteSQL(textEditorControl2.Text, textBox2, bunifuMaterialTextbox2, WarningHintSwitch2);
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("T3");
+            //MessageBox.Show("T3");
+            ExecuteSQL(textEditorControl3.Text, textBox3, bunifuMaterialTextbox3, WarningHintSwitch3);
         }
 
         private void timer4_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("T4");
+            //MessageBox.Show("T4");
+            ExecuteSQL(textEditorControl4.Text, textBox4, bunifuMaterialTextbox4, WarningHintSwitch4);
         }
 
         private void timer5_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("T5");
+            //MessageBox.Show("T5");
+            ExecuteSQL(textEditorControl5.Text, textBox5, bunifuMaterialTextbox5, WarningHintSwitch5);
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
