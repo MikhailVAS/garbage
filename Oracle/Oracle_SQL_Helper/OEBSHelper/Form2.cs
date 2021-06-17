@@ -8,6 +8,7 @@ using Oracle.ManagedDataAccess.Client;
 using OEBSHelper;
 using Tulpep.NotificationWindow;
 using System.Net.Mail;
+using System.IO;
 //using System.Windows.Forms;
 //using MetroFramework.Forms;
 
@@ -34,6 +35,7 @@ namespace OEBSHelper
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);
         private Boolean ReversParam = true;
+        public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\Monitors.dbs";
         //this.Cursor = Cursors.Default;
 
 
@@ -56,6 +58,8 @@ namespace OEBSHelper
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
             bunifuMaterialTextbox1.Text = bunifuMaterialTextbox1.Text + " " + Form1.GlobalParam.monitor_count;
+            ReadMonitor();
+
             //  AnimateWindow(this.Handle, 150, AnimateWindowFlags.AW_SLIDE | AnimateWindowFlags.AW_VER_NEGATIVE);
         }
 
@@ -293,6 +297,86 @@ namespace OEBSHelper
             }
         }
 
+        public void SaveMonitor()
+        {
+            DialogResult result;
+            result = MessageBox.Show("Do you want to save file?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question); if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (bunifuMaterialTextbox1.Text != null
+                        && bunifuMaterialTextbox2.Text != null
+                        && bunifuMaterialTextbox3.Text != null
+                        && bunifuMaterialTextbox4.Text != null
+                        && bunifuMaterialTextbox5.Text != null
+                        && textEditorControl1.Text != null
+                        && textEditorControl2.Text != null
+                        && textEditorControl3.Text != null
+                        && textEditorControl4.Text != null
+                        && textEditorControl5.Text != null)
+                    {
+                        saveFile(bunifuMaterialTextbox1.Text,
+                            bunifuMaterialTextbox2.Text,
+                            bunifuMaterialTextbox3.Text,
+                            bunifuMaterialTextbox4.Text,
+                            bunifuMaterialTextbox5.Text,
+                            textEditorControl1.Text,
+                            textEditorControl2.Text,
+                            textEditorControl3.Text,
+                            textEditorControl4.Text,
+                            textEditorControl5.Text);
+                    }
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.ToString());
+                }
+            }
+        }
+
+        public void saveFile(string MonitName1, string MonitName2, string MonitName3, string MonitName4,
+                              string MonitName5, string SQL1, string SQL2, string SQL3, string SQL4, string SQL5)
+        {
+            string Msg = MonitName1 + ";" + MonitName2 + ";" + MonitName3 + ";" + MonitName4 + ";" + MonitName5
+                + ";" + SQL1 + ";" + SQL2 + ";" + SQL3 + ";" + SQL4 + ";" + SQL5;
+            // Save File to .txt  
+            FileStream fParameter = new FileStream(dirParameter, FileMode.Create, FileAccess.Write);
+            StreamWriter m_WriterParameter = new StreamWriter(fParameter);
+            m_WriterParameter.BaseStream.Seek(0, SeekOrigin.End);
+            m_WriterParameter.Write(Msg);
+            m_WriterParameter.Flush();
+            m_WriterParameter.Close();
+        }
+
+        public void ReadMonitor()
+        {
+            if (File.Exists(dirParameter))
+                using (StreamReader streamReader = new StreamReader(dirParameter))
+
+                {
+
+                    string line = string.Empty;
+                    while ((line = streamReader.ReadToEnd()) != null)
+                    {
+                        string[] tempArray = line.Split(';');
+                        bunifuMaterialTextbox1.Text = tempArray[0];
+                        bunifuMaterialTextbox2.Text = tempArray[1];
+                        bunifuMaterialTextbox3.Text = tempArray[2];
+                        bunifuMaterialTextbox4.Text = tempArray[3];
+                        bunifuMaterialTextbox5.Text = tempArray[4];
+                        textEditorControl1.Text = tempArray[5];
+                        textEditorControl2.Text = tempArray[6];
+                        textEditorControl3.Text = tempArray[7];
+                        textEditorControl4.Text = tempArray[8];
+                        textEditorControl5.Text = tempArray[9];
+                        break;
+                    }
+                }
+        }
 
         private void bunifuiOSSwitch1_OnValueChange(object sender, EventArgs e)
         {
@@ -351,6 +435,11 @@ namespace OEBSHelper
         private void timer5_Tick(object sender, EventArgs e)
         {
             MessageBox.Show("T5");
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            SaveMonitor();
         }
 
     }

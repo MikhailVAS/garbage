@@ -165,6 +165,33 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuImageButton2.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAMZJREFUSEvt
+        lj0OwjAMhasOORQqN+sOnIWVIwEj4gbm2XlCCQ0qqawMpZ/kIf55r10SdyISECfEHeHBEzEi+i4FiaNW
+        P9ixXAXmhjhunBGBJSveLJ3A0ixsN5jKcuCCiGbxnGOFH2C7wVRJT/+sb2GkjK2MHq2M5E+MwMC5KjC3
+        j+NTvn6BN+s3WnTHlYBWeu/lRuxxg7LGZlQFZY3NqArKGus0ei8nrLtBWeWqh3TdWvQ8lIBW+mQcNKEL
+        pJpN1i4HVBPaEl4Ic/i90SL+bAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuImageButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAMZJREFUSEvt
+        lj0OwjAMhasOORQqN+sOnIWVIwEj4gbm2XlCCQ0qqawMpZ/kIf55r10SdyISECfEHeHBEzEi+i4FiaNW
+        P9ixXAXmhjhunBGBJSveLJ3A0ixsN5jKcuCCiGbxnGOFH2C7wVRJT/+sb2GkjK2MHq2M5E+MwMC5KjC3
+        j+NTvn6BN+s3WnTHlYBWeu/lRuxxg7LGZlQFZY3NqArKGus0ei8nrLtBWeWqh3TdWvQ8lIBW+mQcNKEL
+        pJpN1i4HVBPaEl4Ic/i90SL+bAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuImageButton2.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAMZJREFUSEvt
+        lj0OwjAMhasOORQqN+sOnIWVIwEj4gbm2XlCCQ0qqawMpZ/kIf55r10SdyISECfEHeHBEzEi+i4FiaNW
+        P9ixXAXmhjhunBGBJSveLJ3A0ixsN5jKcuCCiGbxnGOFH2C7wVRJT/+sb2GkjK2MHq2M5E+MwMC5KjC3
+        j+NTvn6BN+s3WnTHlYBWeu/lRuxxg7LGZlQFZY3NqArKGus0ei8nrLtBWeWqh3TdWvQ8lIBW+mQcNKEL
+        pJpN1i4HVBPaEl4Ic/i90SL+bAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="bunifuImageButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAAd5JREFUaEPt
@@ -477,6 +504,25 @@
         qG9c0ke1Rl01SQ9QQ031SY+5M2r5ftLj7oQa5kx68C/id83v5vH4B2a0rlgJx6rXAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="textEditorControl4.Text" xml:space="preserve">
+    <value>  SELECT user_concurrent_program_name,
+         responsibility_name,
+         request_date,
+         argument_text,
+         request_id,
+         phase_code,
+         status_code,
+         logfile_name,
+         outfile_name,
+         output_file_type
+    FROM apps.fnd_concurrent_requests  fcr,
+         apps.fnd_concurrent_programs_tl fcp,
+         apps.fnd_responsibility_tl    fr,
+         apps.fnd_user                 fu
+   WHERE     fcr.CONCURRENT_PROGRAM_ID = fcp.concurrent_program_id
+         AND fcr.responsibility_id = fr.responsibility_id
+         AND fcr.requested_by = fu.user_id</value>
+  </data>
   <data name="bunifuCircleProgressbar4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIEAAACBCAYAAADnoNlQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -677,6 +723,23 @@
         aRxq/5x0UP1R93bSYfVH3fuSLlA/1Hws6SJdR73Hky7TddR7LulCnUet15Iu1nHU2SfpA9qPGvsmfUjb
         qG9c0ke1Rl01SQ9QQ031SY+5M2r5ftLj7oQa5kx68C/id83v5vH4B2a0rlgJx6rXAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="textEditorControl1.Text" xml:space="preserve">
+    <value>  SELECT secondary_inventory_name subinventory,
+         description,
+         subinventory_type,
+         organization_id,
+         asset_inventory,
+         quantity_tracked,
+         inventory_atp_code,
+         availability_type,
+         reservable_type,
+         locator_type,
+         picking_order,
+         dropping_order,
+         location_id,
+         status_id
+    FROM inv.mtl_secondary_inventories</value>
   </data>
   <data name="bunifuCircleProgressbar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

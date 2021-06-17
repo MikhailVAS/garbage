@@ -35,6 +35,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.header = new System.Windows.Forms.Panel();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton7 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -105,6 +106,7 @@
             this.timer6 = new System.Windows.Forms.Timer(this.components);
             this.timer7 = new System.Windows.Forms.Timer(this.components);
             this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).BeginInit();
@@ -132,6 +134,7 @@
             // header
             // 
             this.header.BackColor = System.Drawing.Color.SeaGreen;
+            this.header.Controls.Add(this.bunifuImageButton2);
             this.header.Controls.Add(this.bunifuImageButton6);
             this.header.Controls.Add(this.bunifuImageButton1);
             this.header.Controls.Add(this.bunifuImageButton7);
@@ -142,6 +145,27 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(735, 44);
             this.header.TabIndex = 2;
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuTransition1.SetDecoration(this.bunifuImageButton2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuImageButton2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.ErrorImage")));
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.InitialImage")));
+            this.bunifuImageButton2.Location = new System.Drawing.Point(213, 7);
+            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(34, 30);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 23;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // bunifuImageButton6
             // 
@@ -343,8 +367,8 @@
             this.textEditorControl5.Name = "textEditorControl5";
             this.textEditorControl5.Size = new System.Drawing.Size(449, 170);
             this.textEditorControl5.TabIndex = 44;
-            this.textEditorControl5.Text = "select \r\n   owner       c1, \r\n   object_type c3,\r\n   object_name c2\r\nfrom \r\n  dba" +
-    "_objects \r\nwhere \r\n   status != \'VALID\'\r\norder by\r\n   owner,\r\n   object_type;";
+            this.textEditorControl5.Text = "SELECT *\r\n  FROM APPS.GL_DAILY_RATES\r\n WHERE CREATION_DATE > TO_DATE (\'22.06.2021" +
+    "\', \'dd.mm.yyyy\')";
             // 
             // textBox5
             // 
@@ -428,7 +452,7 @@
             this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
             this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(273, 27);
             this.bunifuMaterialTextbox5.TabIndex = 40;
-            this.bunifuMaterialTextbox5.Text = "Not Costing Transaction";
+            this.bunifuMaterialTextbox5.Text = "Not 5";
             this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel5
@@ -518,8 +542,7 @@
             this.textEditorControl4.Name = "textEditorControl4";
             this.textEditorControl4.Size = new System.Drawing.Size(449, 170);
             this.textEditorControl4.TabIndex = 44;
-            this.textEditorControl4.Text = "select \r\n   owner       c1, \r\n   object_type c3,\r\n   object_name c2\r\nfrom \r\n  dba" +
-    "_objects \r\nwhere \r\n   status != \'VALID\'\r\norder by\r\n   owner,\r\n   object_type;";
+            this.textEditorControl4.Text = resources.GetString("textEditorControl4.Text");
             // 
             // textBox4
             // 
@@ -603,7 +626,7 @@
             this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
             this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(273, 27);
             this.bunifuMaterialTextbox4.TabIndex = 40;
-            this.bunifuMaterialTextbox4.Text = "Not Costing Transaction";
+            this.bunifuMaterialTextbox4.Text = "Not  4";
             this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel4
@@ -693,8 +716,7 @@
             this.textEditorControl3.Name = "textEditorControl3";
             this.textEditorControl3.Size = new System.Drawing.Size(449, 170);
             this.textEditorControl3.TabIndex = 44;
-            this.textEditorControl3.Text = "select \r\n   owner       c1, \r\n   object_type c3,\r\n   object_name c2\r\nfrom \r\n  dba" +
-    "_objects \r\nwhere \r\n   status != \'VALID\'\r\norder by\r\n   owner,\r\n   object_type;";
+            this.textEditorControl3.Text = "SELECT \r\nS.SID,\r\n S.SERIAL#,\r\n S.OSUSER, \r\nS.PROGRAM\r\n   FROM V$SESSION S";
             // 
             // textBox3
             // 
@@ -778,7 +800,7 @@
             this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
             this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(273, 27);
             this.bunifuMaterialTextbox3.TabIndex = 40;
-            this.bunifuMaterialTextbox3.Text = "Not Costing Transaction";
+            this.bunifuMaterialTextbox3.Text = "Not  3";
             this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel3
@@ -953,7 +975,7 @@
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
             this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(273, 27);
             this.bunifuMaterialTextbox2.TabIndex = 40;
-            this.bunifuMaterialTextbox2.Text = "Not Costing Transaction";
+            this.bunifuMaterialTextbox2.Text = "Not  2";
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // panel1
@@ -1087,8 +1109,7 @@
             this.textEditorControl1.Name = "textEditorControl1";
             this.textEditorControl1.Size = new System.Drawing.Size(449, 170);
             this.textEditorControl1.TabIndex = 44;
-            this.textEditorControl1.Text = "select \r\n   owner       c1, \r\n   object_type c3,\r\n   object_name c2\r\nfrom \r\n  dba" +
-    "_objects \r\nwhere \r\n   status != \'VALID\'\r\norder by\r\n   owner,\r\n   object_type;";
+            this.textEditorControl1.Text = resources.GetString("textEditorControl1.Text");
             // 
             // textBox1
             // 
@@ -1154,7 +1175,7 @@
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(273, 27);
             this.bunifuMaterialTextbox1.TabIndex = 40;
-            this.bunifuMaterialTextbox1.Text = "Not Costing Transaction";
+            this.bunifuMaterialTextbox1.Text = "Not 1";
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // notifyIcon1
@@ -1195,6 +1216,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).EndInit();
@@ -1290,5 +1312,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuiOSSwitch WarningHintSwitch1;
         private Bunifu.Framework.UI.BunifuiOSSwitch MailSwitch1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
     }
 }
