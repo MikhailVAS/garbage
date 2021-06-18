@@ -49,11 +49,11 @@ namespace OEBSHelper
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
+            //textBox1.Text = "";
+            //textBox2.Text = "";
+            //textBox3.Text = "";
+            //textBox4.Text = "";
+            //textBox5.Text = "";
             var wArea = Screen.PrimaryScreen.WorkingArea;
             this.Left = wArea.Width + wArea.Left - this.Width;
             this.Top = wArea.Height + wArea.Top - this.Height;
@@ -264,12 +264,18 @@ namespace OEBSHelper
                 bunifuImageButton1.Refresh();
                 bunifuImageButton7.Left = 213;
                 this.ReversParam = false;
-                panel1.Size = new Size(230, 185);
-                panel2.Size = new Size(230, 185);
-                panel3.Size = new Size(230, 185);
-                panel4.Size = new Size(230, 185);
-                panel5.Size = new Size(230, 185);
-                panel6.Size = new Size(230, 185);
+                //panel1.Size = new Size(230, 185);
+                //panel2.Size = new Size(230, 185);
+                //panel3.Size = new Size(230, 185);
+                //panel4.Size = new Size(230, 185);
+               // panel5.Size = new Size(230, 185);
+                //panel6.Size = new Size(230, 185);
+                panel1.Width = 230;
+                panel2.Width = 230;
+                panel3.Width = 230;
+                panel4.Width = 230;
+                panel5.Width = 230;
+                panel6.Width = 230;
                 // this.Location = new Point(0, 0);
                 //this.Location = new Point(resolution.Right - this.Width, resolution.Bottom);
                 this.Location = new Point(resolution.Width - Size.Width,480);
