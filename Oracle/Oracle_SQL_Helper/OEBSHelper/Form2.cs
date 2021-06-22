@@ -36,9 +36,6 @@ namespace OEBSHelper
         static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);
         private Boolean ReversParam = true;
         public static string dirParameter = AppDomain.CurrentDomain.BaseDirectory + @"\Monitors.dbs";
-        //this.Cursor = Cursors.Default;
-
-
 
         public Form2()
         {
@@ -256,6 +253,9 @@ namespace OEBSHelper
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            //String LAST_UPDATED_BY = Convert.ToStr
+            TextBox[] boxes = { textBox1, textBox2, textBox3, textBox4, textBox5 };
+            Panel[] Panels = { panel1, panel2, panel3, panel4, panel5 };
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
             if (this.ReversParam)
             {
@@ -264,26 +264,24 @@ namespace OEBSHelper
                 bunifuImageButton1.Refresh();
                 bunifuImageButton7.Left = 213;
                 this.ReversParam = false;
-                //panel1.Size = new Size(230, 185);
-                //panel2.Size = new Size(230, 185);
-                //panel3.Size = new Size(230, 185);
-                //panel4.Size = new Size(230, 185);
-               // panel5.Size = new Size(230, 185);
-                //panel6.Size = new Size(230, 185);
-                panel1.Width = 230;
-                panel2.Width = 230;
-                panel3.Width = 230;
-                panel4.Width = 230;
-                panel5.Width = 230;
-                panel6.Width = 230;
+               
+                for (int i = 0; i < boxes.Length; i++)
+                {
+               
+                        boxes[i].Width = 33;
+                    
+                }
+                for (int i = 0; i < Panels.Length; i++)
+                {
+
+                    Panels[i].Width = 230;
+
+                }
+                //textBox1.Width = 33;
+                //textBox1.Text = "123";
                 // this.Location = new Point(0, 0);
                 //this.Location = new Point(resolution.Right - this.Width, resolution.Bottom);
                 this.Location = new Point(resolution.Width - Size.Width,480);
-                /*for (int i = 1; i <= 6; i++) 
-                   {
-                      this.Controls["panel" + i.ToString()].Size = new Size(230, 185);
-
-                   } */
             }
             else
             {
@@ -292,12 +290,12 @@ namespace OEBSHelper
                 bunifuImageButton1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
                 bunifuImageButton1.Refresh();
                 bunifuImageButton7.Left = 697;
-                panel1.Width = 706;
-                panel2.Width = 706;
-                panel3.Width = 706;
-                panel4.Width = 706;
-                panel5.Width = 706;
-                panel6.Width = 706;
+                for (int i = 0; i < Panels.Length; i++)
+                {
+
+                    Panels[i].Width = 706;
+
+                }
                 this.ReversParam = true;
                 // this.Location = new Point(0, 0);
                 this.Location = new Point(resolution.Width - Size.Width, 480);
