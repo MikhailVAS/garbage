@@ -264,7 +264,7 @@ namespace OEBSHelper
                 bunifuImageButton1.Refresh();
                 bunifuImageButton7.Left = 213;
                 this.ReversParam = false;
-               
+                this.VerticalScroll.Value = 0;
                 for (int i = 0; i < boxes.Length; i++)
                 {
                
