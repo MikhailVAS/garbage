@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -89,6 +89,8 @@
             this.bunifuCircleProgressbar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.WarningHintSwitch1 = new Bunifu.Framework.UI.BunifuiOSSwitch();
@@ -96,8 +98,6 @@
             this.TimeTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textEditorControl1 = new ICSharpCode.TextEditor.TextEditorControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -207,7 +207,7 @@
             this.bunifuTransition1.SetDecoration(this.bunifuImageButton7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
             this.bunifuImageButton7.ImageActive = null;
-            this.bunifuImageButton7.Location = new System.Drawing.Point(697, 7);
+            this.bunifuImageButton7.Location = new System.Drawing.Point(697, 4);
             this.bunifuImageButton7.Name = "bunifuImageButton7";
             this.bunifuImageButton7.Size = new System.Drawing.Size(30, 30);
             this.bunifuImageButton7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,22 +232,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.bunifuTransition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // contextMenuStrip1
             // 
@@ -1029,6 +1029,47 @@
             this.panel1.Size = new System.Drawing.Size(706, 185);
             this.panel1.TabIndex = 54;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.CausesValidation = false;
+            this.bunifuTransition1.SetDecoration(this.textBox1, BunifuAnimatorNS.DecorationType.None);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.textBox1.Location = new System.Drawing.Point(31, 90);
+            this.textBox1.MinimumSize = new System.Drawing.Size(87, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(87, 33);
+            this.textBox1.TabIndex = 46;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 5;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.bunifuTransition1.SetDecoration(this.bunifuCircleProgressbar1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bunifuCircleProgressbar1.LabelVisible = false;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
+            this.bunifuCircleProgressbar1.LineThickness = 5;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(10, 42);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(129, 129);
+            this.bunifuCircleProgressbar1.TabIndex = 20;
+            this.bunifuCircleProgressbar1.Value = 0;
+            // 
             // bunifuCustomLabel12
             // 
             this.bunifuCustomLabel12.AutoSize = true;
@@ -1127,47 +1168,6 @@
             this.textEditorControl1.Size = new System.Drawing.Size(449, 170);
             this.textEditorControl1.TabIndex = 44;
             this.textEditorControl1.Text = "  ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.CausesValidation = false;
-            this.bunifuTransition1.SetDecoration(this.textBox1, BunifuAnimatorNS.DecorationType.None);
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.textBox1.Location = new System.Drawing.Point(31, 90);
-            this.textBox1.MinimumSize = new System.Drawing.Size(87, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(87, 33);
-            this.textBox1.TabIndex = 46;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuTransition1.SetDecoration(this.bunifuCircleProgressbar1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bunifuCircleProgressbar1.LabelVisible = false;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(10, 42);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(129, 129);
-            this.bunifuCircleProgressbar1.TabIndex = 20;
-            this.bunifuCircleProgressbar1.Value = 0;
             // 
             // bunifuMaterialTextbox1
             // 
